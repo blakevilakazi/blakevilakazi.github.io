@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>sc admin</title>
+<link rel="icon" href="">
+<style>
+:root{--bg:#0b0b0f;--card:#0f1720;--muted:#9aa6b2;--accent:#7cc}*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#e6eef6}main{max-width:980px;margin:28px auto;padding:20px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}button{background:transparent;border:1px solid #233;color:inherit;padding:8px 12px;border-radius:8px;cursor:pointer}input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #222;background:transparent;color:inherit}section.card{background:linear-gradient(180deg,#071018 0%, #091018 100%);padding:16px;border-radius:12px;border:1px solid #102029;margin-bottom:14px}#files{display:grid;grid-template-columns:1fr 120px;gap:8px;align-items:center}
+.list{margin-top:12px}
+.small{font-size:13px;color:var(--muted)}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div>
+<h1 style="margin:0;font-size:20px">sc admin</h1>
+<div class="small">Google sign-in required</div>
+</div>
+<div id="auth-area"><button id="btn-signin">Sign in with Google</button></div>
+</header>
+
+<section class="card" id="admin-panel" style="display:none">
+<div style="display:flex;gap:8px;margin-bottom:12px">
+<input id="filename" placeholder="filename e.g. index.html or assets/main.js" />
+<select id="contentType"><option value="file">file</option><option value="html">html</option><option value="css">css</option><option value="js">js</option></select>
+</div>
+<textarea id="filecontent" rows="10" placeholder="paste code or content here"></textarea>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button id="btn-upload">Save to storage</button>
+<button id="btn-create-public-url">Get public URL</button>
+<button id="btn-refresh">Refresh list</button>
+</div>
+<div class="small" style="margin-top:8px">Or upload binary file</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<input type="file" id="filepicker" />
+<button id="btn-upload-file">Upload file</button>
+</div>
+
+<div class="list" id="list-area"></div>
+</section>
+
+<section class="card">
+<h3 style="margin:0 0 8px 0">sc preview</h3>
+<div class="small">sc will serve the file named <strong>index.html</strong> from bucket <strong>site-files</strong>. Use preview to test.</div>
+<div style="display:flex;gap:8px;margin-top:12px">
+<button id="btn-preview">Open preview</button>
+<input id="preview-url" placeholder="optional path (defaults to index.html)" />
+</div>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/index.min.js"></script>
+<script>
+const SUPABASE_URL='https://fzdtusalfwrixafnzhfa.supabase.co'
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ6ZHR1c2FsZndyaXhhZm56aGZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NDMzNTEsImV4cCI6MjA3NTQxOTM1MX0.fqZuBwpoUR4IBK0Mk3-Cry8uDlpbgqIrTck33NSBAM8'
+const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+const adminEmail='vuyaniphila86@gmail.com'
+const btnSignin=document.getElementById('btn-signin')
+const authArea=document.getElementById('auth-area')
+const adminPanel=document.getElementById('admin-panel')
+const filenameInput=document.getElementById('filename')
+const filecontent=document.getElementById('filecontent')
+const btnUpload=document.getElementById('btn-upload')
+const btnUploadFile=document.getElementById('btn-upload-file')
+const filepicker=document.getElementById('filepicker')
+const listArea=document.getElementById('list-area')
+const btnCreateUrl=document.getElementById('btn-create-public-url')
+const btnRefresh=document.getElementById('btn-refresh')
+const btnPreview=document.getElementById('btn-preview')
+const previewUrlInput=document.getElementById('preview-url')
+
+async function checkSession(){
+  const { data } = await supabase.auth.getSession()
+  const session = data.session
+  if(session && session.user){
+    const email = session.user.email
+    if(email !== adminEmail){ authArea.innerHTML = '<div class="small">Access denied</div>'; return }
+    authArea.innerHTML = `<div class="small">Signed in as ${email} <button id="btn-signout">Sign out</button></div>`
+    document.getElementById('btn-signout').onclick = async ()=>{ await supabase.auth.signOut(); location.reload() }
+    adminPanel.style.display='block'
+    loadFileList()
+  } else {
+    authArea.innerHTML = '<button id="btn-signin">Sign in with Google</button>'
+    document.getElementById('btn-signin').onclick = signIn
+  }
+}
+async function signIn(){ await supabase.auth.signInWithOAuth({provider:'google', options:{redirectTo:location.origin}}) }
+btnSignin.onclick = signIn
+async function loadFileList(){
+  listArea.innerHTML = 'Loading...'
+  const { data, error } = await supabase.storage.from('site-files').list('', {limit:100})
+  if(error){ listArea.innerHTML = 'Could not list files'; return }
+  if(!data || data.length===0){ listArea.innerHTML='No files' ; return }
+  listArea.innerHTML = ''
+  data.forEach(entry=>{
+    const row = document.createElement('div')
+    row.style.display='flex'
+    row.style.justifyContent='space-between'
+    row.style.alignItems='center'
+    row.style.padding='6px 0'
+    const left = document.createElement('div')
+    left.innerHTML = `<div style="font-size:14px">${entry.name}</div><div class="small">${entry.size} bytes • ${entry.updated_at}</div>`
+    const right = document.createElement('div')
+    const btnEdit = document.createElement('button'); btnEdit.textContent='Edit'
+    const btnGet = document.createElement('button'); btnGet.textContent='URL'
+    const btnDelete = document.createElement('button'); btnDelete.textContent='Delete'
+    btnEdit.onclick = async ()=>{ const { data:content } = await supabase.storage.from('site-files').download(entry.name); const txt = await content.text(); filenameInput.value=entry.name; filecontent.value=txt }
+    btnGet.onclick = async ()=>{ const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/site-files/${encodeURIComponent(entry.name)}`; prompt('public url', publicUrl) }
+    btnDelete.onclick = async ()=>{ if(!confirm('delete?')) return; await supabase.storage.from('site-files').remove([entry.name]); loadFileList() }
+    right.appendChild(btnEdit); right.appendChild(btnGet); right.appendChild(btnDelete)
+    row.appendChild(left); row.appendChild(right); listArea.appendChild(row)
+  })
+}
+btnUpload.onclick = async ()=>{
+  const name = filenameInput.value.trim()
+  if(!name) return alert('filename required')
+  const blob = new Blob([filecontent.value], {type:'text/plain'})
+  const { error } = await supabase.storage.from('site-files').upload(name, blob, {upsert:true})
+  if(error) return alert('upload failed')
+  alert('saved')
+  loadFileList()
+}
+btnUploadFile.onclick = async ()=>{
+  const f = filepicker.files[0]; if(!f) return alert('choose file')
+  const name = f.name
+  const { error } = await supabase.storage.from('site-files').upload(name, f, {upsert:true})
+  if(error) return alert('upload failed')
+  alert('uploaded')
+  loadFileList()
+}
+btnCreateUrl.onclick = async ()=>{
+  const name = filenameInput.value.trim()
+  if(!name) return alert('filename required')
+  const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/site-files/${encodeURIComponent(name)}`
+  prompt('public url', publicUrl)
+}
+btnRefresh.onclick = ()=>loadFileList()
+btnPreview.onclick = ()=>{
+  const path = previewUrlInput.value.trim() || 'index.html'
+  const url = `${location.origin.replace(/\/admin\/?$/,'')}/preview.html?path=${encodeURIComponent(path)}`
+  window.open(url,'_blank')
+}
+window.addEventListener('load', async ()=>{
+  const params = new URLSearchParams(location.search)
+  const provider = params.get('provider')
+  await checkSession()
+})
+supabase.auth.onAuthStateChange((event, session)=>{ checkSession() })
+checkSession()
+</script>
+</body>
+</html>
