@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>sc</title>
+<link rel="icon" id="dynamic-favicon" href="">
+<meta name="description" content="">
+<style>
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:#fff;color:#111}
+#frame{width:100%;height:100vh;border:0}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#071018;color:#8be}
+</style>
+</head>
+<body>
+<div id="loading">loading</div>
+<div id="target"></div>
+<script>
+const SUPABASE_URL='https://fzdtusalfwrixafnzhfa.supabase.co'
+const BUCKET='site-files'
+const STORAGE_BASE=`${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/`
+async function fetchAndInject(path){
+  const url = STORAGE_BASE + encodeURIComponent(path)
+  const r = await fetch(url)
+  if(!r.ok){ document.getElementById('target').innerHTML='<div style="padding:20px">Error: File not found</div>'; document.getElementById('loading').style.display='none'; return }
+  const txt = await r.text()
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(txt,'text/html')
+  const title = doc.querySelector('title')?.innerText; if(title) document.title=title
+  const desc = doc.querySelector('meta[name=\"description\"]')?.getAttribute('content'); if(desc) document.querySelector('meta[name=\"description\"]').setAttribute('content',desc)
+  const favicon = doc.querySelector('link[rel~=\"icon\"]')?.getAttribute('href'); if(favicon) document.getElementById('dynamic-favicon').setAttribute('href', toAbs(favicon))
+  rewriteAssets(doc)
+  document.getElementById('target').innerHTML = doc.body.innerHTML
+  executeScripts(doc)
+  document.getElementById('loading').style.display='none'
+}
+function toAbs(url){
+  if(!url) return url
+  if(url.startsWith('http')) return url
+  if(url.startsWith('/')) return STORAGE_BASE + url.replace(/^\//,'')
+  return STORAGE_BASE + url
+}
+function rewriteAssets(doc){
+  doc.querySelectorAll('link[href]').forEach(el=>{
+    const href = el.getAttribute('href')
+    if(href && !href.match(/^https?:\/\//)) el.setAttribute('href', toAbs(href))
+  })
+  doc.querySelectorAll('script[src]').forEach(el=>{
+    const src = el.getAttribute('src')
+    if(src && !src.match(/^https?:\/\//)) el.setAttribute('src', toAbs(src))
+  })
+  doc.querySelectorAll('img[src]').forEach(el=>{
+    const s = el.getAttribute('src')
+    if(s && !s.match(/^https?:\/\//)) el.setAttribute('src', toAbs(s))
+  })
+  doc.querySelectorAll('a[href]').forEach(el=>{
+    const h = el.getAttribute('href')
+    if(h && !h.match(/^https?:\/\//) && !h.startsWith('mailto:') && !h.startsWith('#')) el.setAttribute('href', '/?path='+encodeURIComponent(h))
+  })
+}
+function executeScripts(doc){
+  doc.querySelectorAll('script').forEach(s=>{
+    const n = document.createElement('script')
+    if(s.src){
+      n.src = s.src
+      n.defer = true
+    } else n.textContent = s.textContent
+    document.body.appendChild(n)
+  })
+}
+const params = new URLSearchParams(location.search)
+const path = params.get('path') || 'index.html'
+fetchAndInject(path)
+</script>
+</body>
+</html>
