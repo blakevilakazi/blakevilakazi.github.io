@@ -1,76 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>sc</title>
-<link rel="icon" id="dynamic-favicon" href="">
-<meta name="description" content="">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Squids | Social Media Platform</title>
+
+<meta name="description" content="Squids is a modern South African social media platform connecting communities through conversations, creativity, and AI-powered experiences.">
+<meta name="keywords" content="Squids, social media South Africa, Squids app, AI social network">
+<meta name="author" content="Squids">
+
+<link rel="canonical" href="https://squids.co.za/">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Squids Social Platform">
+<meta property="og:description" content="Join Squids — a new generation social media experience.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="favicon.ico">
+
 <style>
-html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:#fff;color:#111}
-#frame{width:100%;height:100vh;border:0}
-#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#071018;color:#8be}
+body{
+margin:0;
+font-family:system-ui,Segoe UI,Arial;
+background:#070b18;
+color:#e5e7eb;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#0b1026;
+}
+
+nav img{height:42px;}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+opacity:.8;
+}
+
+nav a:hover{opacity:1;}
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:3rem;
+background:linear-gradient(90deg,#3b82f6,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.card{
+max-width:850px;
+margin:auto;
+background:#0f172a;
+padding:40px;
+border-radius:14px;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.6;
+}
 </style>
+
 </head>
+
 <body>
-<div id="loading">loading</div>
-<div id="target"></div>
-<script>
-const SUPABASE_URL='https://fzdtusalfwrixafnzhfa.supabase.co'
-const BUCKET='site-files'
-const STORAGE_BASE=`${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/`
-async function fetchAndInject(path){
-  const url = STORAGE_BASE + encodeURIComponent(path)
-  const r = await fetch(url)
-  if(!r.ok){ document.getElementById('target').innerHTML='<div style="padding:20px">Error: File not found</div>'; document.getElementById('loading').style.display='none'; return }
-  const txt = await r.text()
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(txt,'text/html')
-  const title = doc.querySelector('title')?.innerText; if(title) document.title=title
-  const desc = doc.querySelector('meta[name=\"description\"]')?.getAttribute('content'); if(desc) document.querySelector('meta[name=\"description\"]').setAttribute('content',desc)
-  const favicon = doc.querySelector('link[rel~=\"icon\"]')?.getAttribute('href'); if(favicon) document.getElementById('dynamic-favicon').setAttribute('href', toAbs(favicon))
-  rewriteAssets(doc)
-  document.getElementById('target').innerHTML = doc.body.innerHTML
-  executeScripts(doc)
-  document.getElementById('loading').style.display='none'
-}
-function toAbs(url){
-  if(!url) return url
-  if(url.startsWith('http')) return url
-  if(url.startsWith('/')) return STORAGE_BASE + url.replace(/^\//,'')
-  return STORAGE_BASE + url
-}
-function rewriteAssets(doc){
-  doc.querySelectorAll('link[href]').forEach(el=>{
-    const href = el.getAttribute('href')
-    if(href && !href.match(/^https?:\/\//)) el.setAttribute('href', toAbs(href))
-  })
-  doc.querySelectorAll('script[src]').forEach(el=>{
-    const src = el.getAttribute('src')
-    if(src && !src.match(/^https?:\/\//)) el.setAttribute('src', toAbs(src))
-  })
-  doc.querySelectorAll('img[src]').forEach(el=>{
-    const s = el.getAttribute('src')
-    if(s && !s.match(/^https?:\/\//)) el.setAttribute('src', toAbs(s))
-  })
-  doc.querySelectorAll('a[href]').forEach(el=>{
-    const h = el.getAttribute('href')
-    if(h && !h.match(/^https?:\/\//) && !h.startsWith('mailto:') && !h.startsWith('#')) el.setAttribute('href', '/?path='+encodeURIComponent(h))
-  })
-}
-function executeScripts(doc){
-  doc.querySelectorAll('script').forEach(s=>{
-    const n = document.createElement('script')
-    if(s.src){
-      n.src = s.src
-      n.defer = true
-    } else n.textContent = s.textContent
-    document.body.appendChild(n)
-  })
-}
-const params = new URLSearchParams(location.search)
-const path = params.get('path') || 'index.html'
-fetchAndInject(path)
-</script>
+
+<nav>
+<img src="/assets/logo.png" alt="Squids Logo">
+<div>
+<a href="/">Home</a>
+<a href="/help">Help</a>
+<a href="/terms">Terms</a>
+</div>
+</nav>
+
+<section class="hero">
+<h1>Welcome to Squids</h1>
+<p>A social platform built for modern communities.</p>
+</section>
+
+<div class="card">
+<h2>About Squids</h2>
+<p>
+Squids is a South African social media platform designed for connection,
+communication, and intelligent digital experiences powered by modern technologies.
+</p>
+</div>
+
+<footer>
+© 2026 Squids • support@squids.co.za
+</footer>
+
 </body>
 </html>
