@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service — Squids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --blue: #2563f6;
+      --violet: #7c3aed;
+      --indigo: #1a1a4e;
+      --bg: #07071a;
+      --surface: #0f0f2e;
+      --surface2: #151535;
+      --text: #e8e8f5;
+      --muted: #8888bb;
+      --border: rgba(120,120,220,0.15);
+      --accent: #4f8cff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(37,99,246,0.18) 0%, rgba(124,58,237,0.10) 50%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 68px;
+      background: rgba(7,7,26,0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-logo span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, #4f8cff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn-home {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.875rem !important;
+      font-weight: 600 !important;
+      transition: opacity 0.2s, transform 0.2s !important;
+    }
+    .btn-home:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(79,140,255,0.1);
+      border: 1px solid rgba(79,140,255,0.3);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #4f8cff 0%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-meta {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-meta strong { color: var(--text); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── LAYOUT ── */
+    .page-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 3rem) 5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .page-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 88px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .sidebar-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar nav { display: flex; flex-direction: column; gap: 2px; }
+
+    .sidebar nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      line-height: 1.4;
+    }
+    .sidebar nav a:hover { background: rgba(79,140,255,0.1); color: var(--text); }
+
+    .sidebar-links {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: gap 0.2s;
+    }
+    .sidebar-links a:hover { gap: 12px; }
+    .sidebar-links a svg { flex-shrink: 0; }
+
+    /* ── CONTENT ── */
+    .content { animation: fadeUp 0.6s 0.4s ease both; }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .section:hover { border-color: rgba(79,140,255,0.3); }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      color: #fff;
+    }
+
+    .section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      padding-top: 5px;
+    }
+
+    .section p, .section li {
+      color: #c0c0de;
+      font-size: 0.925rem;
+      line-height: 1.8;
+    }
+
+    .section ul, .section ol {
+      padding-left: 1.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .section li { margin-bottom: 0.35rem; }
+
+    .section p + p { margin-top: 0.75rem; }
+
+    .highlight-box {
+      background: rgba(37,99,246,0.08);
+      border: 1px solid rgba(79,140,255,0.2);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .highlight-box p { font-size: 0.875rem; color: var(--muted); }
+
+    .tag {
+      display: inline-block;
+      background: rgba(168,85,247,0.12);
+      border: 1px solid rgba(168,85,247,0.3);
+      color: #c084fc;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    a.inline-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(79,140,255,0.3);
+      transition: border-color 0.2s;
+    }
+    a.inline-link:hover { border-color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left img { height: 28px; }
+    .footer-left span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      background: linear-gradient(90deg, #4f8cff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Warning section style */
+    .section.warning {
+      background: rgba(124,58,237,0.07);
+      border-color: rgba(124,58,237,0.25);
+    }
+
+    .section.notice {
+      background: rgba(37,99,246,0.06);
+      border-color: rgba(37,99,246,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://squids.co.za" class="nav-logo">
+    <img src="logo.png" alt="Squids Logo"/>
+    <span>Squids</span>
+  </a>
+  <div class="nav-links">
+    <a href="https://policies.squids.co.za/cp">Community Policy</a>
+    <a href="https://policies.squids.co.za/privacy">Privacy</a>
+    <a href="https://policies.squids.co.za/help">Help Centre</a>
+    <a href="https://squids.co.za" class="btn-home">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      squids.co.za
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Legal Document</div>
+  <h1>Terms of <span>Service</span></h1>
+  <p class="hero-meta">Last Updated: <strong>27 February 2026</strong> &nbsp;·&nbsp; Effective immediately upon use &nbsp;·&nbsp; <a href="mailto:legal@squids.co.za" class="inline-link">legal@squids.co.za</a></p>
+</div>
+
+<!-- LAYOUT -->
+<div class="page-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Table of Contents</div>
+    <nav>
+      <a href="#s1">1. Introduction</a>
+      <a href="#s2">2. Governing Law</a>
+      <a href="#s3">3. Definitions</a>
+      <a href="#s4">4. Eligibility</a>
+      <a href="#s5">5. Account Registration</a>
+      <a href="#s6">6. Services</a>
+      <a href="#s7">7. AI Services</a>
+      <a href="#s8">8. User Content</a>
+      <a href="#s9">9. Community Rules</a>
+      <a href="#s10">10. Moderation</a>
+      <a href="#s11">11. Intellectual Property</a>
+      <a href="#s12">12. Third-Party Services</a>
+      <a href="#s13">13. Advertising</a>
+      <a href="#s14">14. Disclaimers</a>
+      <a href="#s15">15. Limitation of Liability</a>
+      <a href="#s16">16. Indemnification</a>
+      <a href="#s17">17. Privacy</a>
+      <a href="#s18">18. Cybercrime</a>
+      <a href="#s19">19. Termination</a>
+      <a href="#s20">20. Data Retention</a>
+      <a href="#s21">21. Changes</a>
+      <a href="#s22">22. Force Majeure</a>
+      <a href="#s23">23. Electronic Comms</a>
+      <a href="#s24">24. Severability</a>
+      <a href="#s25">25. Entire Agreement</a>
+      <a href="#s26">26. Contact</a>
+    </nav>
+    <div class="sidebar-links">
+      <a href="https://policies.squids.co.za/privacy">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Privacy Policy
+      </a>
+      <a href="https://policies.squids.co.za/cp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Community Policy
+      </a>
+      <a href="https://policies.squids.co.za/help">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Help Centre
+      </a>
+      <a href="mailto:legal@squids.co.za">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        legal@squids.co.za
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- Section 1 -->
+    <div class="section notice" id="s1">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Introduction</h2>
+      </div>
+      <p>Welcome to <strong>Squids</strong> ("Squids", "we", "us", or "our"), a social media platform operated via <a href="https://squids.co.za" class="inline-link">squids.co.za</a> and associated applications, services, and technologies (collectively, the "Platform").</p>
+      <p>These Terms of Service ("Terms") constitute a legally binding agreement between Squids, its owners, operators, affiliates, licensors, partners, employees, contractors, and successors; and you, the user ("User", "you", or "your").</p>
+      <div class="highlight-box">
+        <p>By accessing, registering for, or using Squids, you confirm that you have read and understood these Terms, agree to be legally bound by them, and consent to electronic contracting under South African law. If you do not agree, you must immediately discontinue use of the Platform.</p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="s2">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>Governing Law and Jurisdiction</h2>
+      </div>
+      <p>These Terms are governed by and interpreted in accordance with the laws of the Republic of South Africa, including but not limited to:</p>
+      <ul>
+        <li>Electronic Communications and Transactions Act 25 of 2002 (ECTA)</li>
+        <li>Consumer Protection Act 68 of 2008 (CPA)</li>
+        <li>Protection of Personal Information Act 4 of 2013 (POPIA)</li>
+        <li>Cybercrimes Act 19 of 2020</li>
+        <li>Common law principles applicable within South Africa</li>
+      </ul>
+      <p style="margin-top:0.75rem;">You consent to the exclusive jurisdiction of South African courts.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="s3">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Definitions</h2>
+      </div>
+      <ul>
+        <li><strong>Account</strong> — a registered Squids user profile.</li>
+        <li><strong>Content</strong> — text, media, messages, comments, AI prompts, uploads, and communications.</li>
+        <li><strong>AI Services</strong> — chatbot or artificial intelligence features integrated into Squids.</li>
+        <li><strong>Affiliates</strong> — related entities, partners, advertisers, licensors, and service providers.</li>
+        <li><strong>User Content</strong> — content submitted by users.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="s4">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Eligibility</h2>
+      </div>
+      <p>You may only use Squids if you meet the following requirements:</p>
+      <ul>
+        <li>You are at least 13 years old, or the minimum age required under South African law.</li>
+        <li>Users under 18 must have parental or guardian consent.</li>
+        <li>You are legally capable of entering binding agreements.</li>
+      </ul>
+      <p style="margin-top:0.75rem;">We reserve the right to suspend accounts suspected of violating eligibility requirements.</p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section" id="s5">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Account Registration</h2>
+      </div>
+      <p>By creating an account, you agree to provide accurate and truthful information, maintain confidentiality of your login credentials, and accept responsibility for all activity conducted under your account.</p>
+      <p>Squids is not liable for losses resulting from unauthorized access caused by user negligence.</p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section" id="s6">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Description of Services</h2>
+      </div>
+      <p>Squids provides a range of services including:</p>
+      <ul>
+        <li>Social networking features</li>
+        <li>User-generated content sharing</li>
+        <li>Messaging and communication tools</li>
+        <li>AI chatbot services powered partly through third-party AI providers</li>
+        <li>Community interaction tools</li>
+      </ul>
+      <p style="margin-top:0.75rem;">Services may change, evolve, or discontinue at any time without prior notice.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section warning" id="s7">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2>Artificial Intelligence Services (Google Gemini)</h2>
+      </div>
+      <div class="tag">AI-Powered Features</div>
+      <p>Squids integrates AI functionality using Google AI Studio and Gemini models. By using AI features, you acknowledge that AI responses are generated automatically, outputs may be inaccurate, incomplete, or unsuitable, and AI responses do not constitute professional advice.</p>
+      <p>Your use of AI features is also subject to applicable third-party terms, including:</p>
+      <ul>
+        <li><a href="https://policies.google.com/terms" class="inline-link" target="_blank" rel="noopener">Google Terms of Service</a></li>
+        <li><a href="https://ai.google.dev/terms" class="inline-link" target="_blank" rel="noopener">Google Generative AI Terms (Gemini / AI Studio)</a></li>
+      </ul>
+      <p style="margin-top:1rem;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;">7.1 AI Usage Responsibilities</p>
+      <p>You agree NOT to use AI services to generate unlawful content, harass or impersonate individuals, produce harmful misinformation, create malicious software, or violate intellectual property rights.</p>
+      <p style="margin-top:0.75rem;font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;">7.2 AI Data Processing</p>
+      <p>Prompts submitted to AI systems may be processed by third-party providers solely for service delivery, safety, and improvement purposes according to their policies.</p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section" id="s8">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2>User Content</h2>
+      </div>
+      <p>You retain ownership of content you post. However, by uploading content, you grant Squids a worldwide, non-exclusive, royalty-free, transferable, and sub-licensable license to host, display, reproduce, distribute, and promote such content for operation of the Platform.</p>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section warning" id="s9">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <h2>Community Rules</h2>
+      </div>
+      <p>Users must <strong>NOT</strong> engage in the following:</p>
+      <ul>
+        <li>Post illegal material</li>
+        <li>Share hate speech prohibited under South African law</li>
+        <li>Promote violence or terrorism</li>
+        <li>Upload pornography involving minors</li>
+        <li>Harass, bully, or threaten others</li>
+        <li>Spread malware or harmful code</li>
+        <li>Conduct scams or fraud</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Squids reserves absolute discretion to remove content or terminate accounts. See our full <a href="https://policies.squids.co.za/cp" class="inline-link">Community Policy</a> for more details.</p>
+      </div>
+    </div>
+
+    <!-- Section 10 -->
+    <div class="section" id="s10">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Platform Moderation Rights</h2>
+      </div>
+      <p>Squids may remove content without notice, suspend or terminate accounts, restrict visibility, and report unlawful activity to authorities. Moderation decisions are final unless required otherwise by law.</p>
+    </div>
+
+    <!-- Section 11 -->
+    <div class="section" id="s11">
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p>All Platform elements including branding, logos, software, design, algorithms, and AI integrations remain the exclusive property of Squids or its licensors.</p>
+      <p>You may not copy, reverse engineer, or commercially exploit the Platform.</p>
+    </div>
+
+    <!-- Section 12 -->
+    <div class="section" id="s12">
+      <div class="section-header">
+        <div class="section-num">12</div>
+        <h2>Third-Party Services and Affiliates</h2>
+      </div>
+      <p>Squids may integrate services provided by affiliates or partners. We are not responsible for third-party websites, external services, advertiser claims, or partner technologies. Your interactions with third parties are solely between you and them.</p>
+    </div>
+
+    <!-- Section 13 -->
+    <div class="section" id="s13">
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <h2>Advertising and Affiliate Protection</h2>
+      </div>
+      <p>Squids may display advertisements or sponsored content. Affiliates and advertisers are protected from liability arising from user misuse of services. Users may not manipulate advertising systems or engagement metrics. Fraudulent activity may result in permanent bans and legal action.</p>
+    </div>
+
+    <!-- Section 14 -->
+    <div class="section" id="s14">
+      <div class="section-header">
+        <div class="section-num">14</div>
+        <h2>Disclaimers</h2>
+      </div>
+      <p>The Platform is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE."</strong> Squids makes no guarantees regarding uninterrupted service, accuracy of AI outputs, content reliability, or platform security.</p>
+      <p>Use is entirely at your own risk.</p>
+    </div>
+
+    <!-- Section 15 -->
+    <div class="section warning" id="s15">
+      <div class="section-header">
+        <div class="section-num">15</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>To the fullest extent permitted by South African law, Squids, its owners, employees, affiliates, and partners shall NOT be liable for indirect damages, loss of profits, reputational harm, data loss, AI-generated misinformation, or user-generated content harm.</p>
+      <div class="highlight-box">
+        <p>Total liability shall not exceed the amount paid by you to Squids in the preceding 12 months (if any).</p>
+      </div>
+    </div>
+
+    <!-- Section 16 -->
+    <div class="section" id="s16">
+      <div class="section-header">
+        <div class="section-num">16</div>
+        <h2>Indemnification</h2>
+      </div>
+      <p>You agree to indemnify and hold harmless Squids and its affiliates from claims arising out of your content, misuse of services, violation of law, or breach of these Terms.</p>
+    </div>
+
+    <!-- Section 17 -->
+    <div class="section" id="s17">
+      <div class="section-header">
+        <div class="section-num">17</div>
+        <h2>Privacy</h2>
+      </div>
+      <p>Use of Squids is also governed by our <a href="https://policies.squids.co.za/privacy" class="inline-link">Privacy Policy</a>, which is compliant with the Protection of Personal Information Act 4 of 2013 (POPIA).</p>
+    </div>
+
+    <!-- Section 18 -->
+    <div class="section" id="s18">
+      <div class="section-header">
+        <div class="section-num">18</div>
+        <h2>Security and Cybercrime Compliance</h2>
+      </div>
+      <p>Under the Cybercrimes Act 19 of 2020, users must not access accounts without authorization, distribute malware, scrape data unlawfully, or attempt system intrusion.</p>
+      <p>Violations may be reported to South African law enforcement.</p>
+    </div>
+
+    <!-- Section 19 -->
+    <div class="section" id="s19">
+      <div class="section-header">
+        <div class="section-num">19</div>
+        <h2>Termination</h2>
+      </div>
+      <p>We may suspend or terminate accounts for Terms violations, legal requirements, security risks, or operational decisions. Termination may occur without prior notice.</p>
+    </div>
+
+    <!-- Section 20 -->
+    <div class="section" id="s20">
+      <div class="section-header">
+        <div class="section-num">20</div>
+        <h2>Data Retention</h2>
+      </div>
+      <p>We may retain data as required by law, for dispute resolution, fraud prevention, and service improvement.</p>
+    </div>
+
+    <!-- Section 21 -->
+    <div class="section" id="s21">
+      <div class="section-header">
+        <div class="section-num">21</div>
+        <h2>Changes to Terms</h2>
+      </div>
+      <p>We may modify these Terms at any time. Continued use of the Platform after updates constitutes acceptance of the revised Terms. We recommend reviewing this page periodically.</p>
+    </div>
+
+    <!-- Section 22 -->
+    <div class="section" id="s22">
+      <div class="section-header">
+        <div class="section-num">22</div>
+        <h2>Force Majeure</h2>
+      </div>
+      <p>Squids shall not be liable for delays caused by events beyond reasonable control including power outages, internet failures, cyberattacks, governmental actions, or natural disasters.</p>
+    </div>
+
+    <!-- Section 23 -->
+    <div class="section" id="s23">
+      <div class="section-header">
+        <div class="section-num">23</div>
+        <h2>Electronic Communications</h2>
+      </div>
+      <p>You consent to receive notices electronically via website announcements, email, and in-app notifications in accordance with the Electronic Communications and Transactions Act 25 of 2002.</p>
+    </div>
+
+    <!-- Section 24 -->
+    <div class="section" id="s24">
+      <div class="section-header">
+        <div class="section-num">24</div>
+        <h2>Severability</h2>
+      </div>
+      <p>If any provision of these Terms is found invalid or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect.</p>
+    </div>
+
+    <!-- Section 25 -->
+    <div class="section" id="s25">
+      <div class="section-header">
+        <div class="section-num">25</div>
+        <h2>Entire Agreement</h2>
+      </div>
+      <p>These Terms, together with the <a href="https://policies.squids.co.za/privacy" class="inline-link">Privacy Policy</a> and <a href="https://policies.squids.co.za/cp" class="inline-link">Community Policy</a>, constitute the entire agreement between you and Squids regarding use of the Platform.</p>
+    </div>
+
+    <!-- Section 26 -->
+    <div class="section notice" id="s26">
+      <div class="section-header">
+        <div class="section-num">26</div>
+        <h2>Contact Information</h2>
+      </div>
+      <p>Legal inquiries may be directed to:</p>
+      <div class="highlight-box" style="margin-top:0.75rem;">
+        <p><strong style="color:var(--text);">Squids Legal Department</strong><br/>
+        Website: <a href="https://squids.co.za" class="inline-link">squids.co.za</a><br/>
+        Email: <a href="mailto:legal@squids.co.za" class="inline-link">legal@squids.co.za</a><br/>
+        Policy Hub: <a href="https://policies.squids.co.za" class="inline-link">policies.squids.co.za</a></p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="logo.png" alt="Squids"/>
+    <span>Squids</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://squids.co.za">Home</a>
+    <a href="https://policies.squids.co.za/terms">Terms of Service</a>
+    <a href="https://policies.squids.co.za/privacy">Privacy Policy</a>
+    <a href="https://policies.squids.co.za/cp">Community Policy</a>
+    <a href="https://policies.squids.co.za/help">Help Centre</a>
+    <a href="mailto:legal@squids.co.za">Legal Contact</a>
+  </div>
+  <div class="footer-copy">
+    © 2026 Squids. All rights reserved. &nbsp;·&nbsp; <a href="https://squids.co.za" style="color:inherit;">squids.co.za</a> &nbsp;·&nbsp; Governed by the laws of the Republic of South Africa.
+  </div>
+</footer>
+
+</body>
+</html>
