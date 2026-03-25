@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Terms of Service — SQUIDS</title>
+<meta name="description" content="Read the SQUIDS Terms of Service. A binding legal agreement governing your use of the SQUIDS social platform, governed by South African law."/>
+<link rel="canonical" href="https://policies.squids.co.za/terms"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--brand:#ff4500;--brand2:#e03d00;--brand-light:#fff2ee;--brand-mid:rgba(255,69,0,.1);--text:#111318;--text2:#4b5563;--text3:#9ca3af;--bg:#ffffff;--bg2:#f9fafb;--bg3:#f3f4f6;--border:#e5e7eb;--border2:#d1d5db;--warning:#fef3c7;--warning-border:#fcd34d;--warning-text:#92400e;--notice:#eff6ff;--notice-border:#bfdbfe;--notice-text:#1e40af;--shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);--radius:12px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.75;min-height:100vh;}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:.25rem;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;padding:.4rem .75rem;border-radius:8px;transition:color .15s,background .15s;}
+.nav-links a:hover{color:var(--text);background:var(--bg3);}
+.nav-cta{background:var(--brand)!important;color:#fff!important;padding:.45rem 1.1rem!important;border-radius:9999px!important;font-weight:700!important;font-size:.82rem!important;}
+.nav-cta:hover{background:var(--brand2)!important;color:#fff!important;}
+
+.page-hero{background:var(--bg2);border-bottom:1px solid var(--border);padding:clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem);}
+.breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--text3);margin-bottom:1.25rem;}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .15s;}
+.breadcrumb a:hover{color:var(--brand);}
+.breadcrumb-sep{color:var(--border2);}
+.page-hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-light);border:1px solid rgba(255,69,0,.2);color:var(--brand);font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .85rem;border-radius:9999px;margin-bottom:1rem;}
+.page-hero h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);letter-spacing:-.02em;margin-bottom:.75rem;line-height:1.15;}
+.page-hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text2);}
+.meta-item svg{width:14px;height:14px;color:var(--text3);}
+
+.layout{display:flex;gap:2rem;max-width:1200px;margin:0 auto;padding:clamp(1.5rem,4vw,3rem) clamp(1rem,5vw,3rem);}
+
+/* TOC Sidebar */
+.toc{width:260px;flex-shrink:0;}
+.toc-inner{position:sticky;top:84px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;max-height:calc(100vh - 100px);overflow-y:auto;}
+.toc-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem;}
+.toc-list{list-style:none;}
+.toc-list li a{display:flex;align-items:flex-start;gap:.5rem;font-size:.8rem;color:var(--text2);text-decoration:none;padding:.3rem .4rem;border-radius:6px;transition:color .15s,background .15s;line-height:1.4;}
+.toc-list li a:hover{color:var(--brand);background:var(--brand-light);}
+.toc-num{font-family:'Outfit',sans-serif;font-weight:700;color:var(--text3);font-size:.75rem;flex-shrink:0;min-width:16px;}
+.toc-divider{height:1px;background:var(--border);margin:.5rem 0;}
+
+.content{flex:1;min-width:0;}
+
+.section-block{margin-bottom:2.25rem;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;scroll-margin-top:84px;}
+.section-head{display:flex;align-items:center;gap:.75rem;padding:1.25rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);}
+.section-num-badge{width:32px;height:32px;background:var(--brand);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:900;font-size:.85rem;flex-shrink:0;}
+.section-head h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;color:var(--text);letter-spacing:-.01em;}
+.section-body{padding:1.5rem;}
+.section-body p{color:var(--text2);font-size:.925rem;margin-bottom:.9rem;}
+.section-body p:last-child{margin-bottom:0;}
+.section-body ul,.section-body ol{color:var(--text2);font-size:.925rem;padding-left:1.4rem;margin-bottom:.9rem;}
+.section-body li{margin-bottom:.35rem;}
+.section-body strong{color:var(--text);font-weight:600;}
+.section-body a{color:var(--brand);text-decoration:none;font-weight:500;}
+.section-body a:hover{text-decoration:underline;}
+.section-body h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin:.9rem 0 .4rem;}
+
+.block-warning{background:var(--warning);border:1px solid var(--warning-border);}
+.block-warning .section-head{background:#fef9e7;border-bottom-color:var(--warning-border);}
+.block-warning .section-num-badge{background:#d97706;}
+.block-notice{background:white;}
+.block-notice .section-head{background:var(--notice);border-bottom-color:var(--notice-border);}
+.block-notice .section-num-badge{background:#2563eb;}
+
+.highlight-box{background:var(--brand-light);border:1px solid rgba(255,69,0,.2);border-radius:8px;padding:1rem 1.25rem;margin:.75rem 0;}
+.highlight-box p{color:var(--text2)!important;font-size:.875rem!important;margin-bottom:0!important;}
+.warning-box{background:var(--warning);border:1px solid var(--warning-border);border-radius:8px;padding:1rem 1.25rem;margin:.75rem 0;display:flex;gap:.65rem;align-items:flex-start;}
+.warning-box svg{width:16px;height:16px;color:#d97706;flex-shrink:0;margin-top:2px;}
+.warning-box p{color:var(--warning-text)!important;font-size:.875rem!important;margin-bottom:0!important;}
+.info-box{background:var(--notice);border:1px solid var(--notice-border);border-radius:8px;padding:1rem 1.25rem;margin:.75rem 0;display:flex;gap:.65rem;align-items:flex-start;}
+.info-box svg{width:16px;height:16px;color:#2563eb;flex-shrink:0;margin-top:2px;}
+.info-box p{color:var(--notice-text)!important;font-size:.875rem!important;margin-bottom:0!important;}
+
+.cross-ref{display:inline-flex;align-items:center;gap:4px;background:var(--bg3);color:var(--text2);font-size:.78rem;font-weight:600;padding:.2rem .6rem;border-radius:6px;text-decoration:none;border:1px solid var(--border);transition:all .15s;margin:.15rem;}
+.cross-ref:hover{background:var(--brand-light);color:var(--brand);border-color:rgba(255,69,0,.3);}
+.cross-refs-row{margin:.75rem 0;display:flex;flex-wrap:wrap;gap:.25rem;align-items:center;}
+.cross-refs-label{font-size:.75rem;color:var(--text3);font-weight:600;margin-right:.25rem;}
+
+.tag{display:inline-flex;align-items:center;gap:4px;background:#fef3c7;color:#92400e;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .6rem;border-radius:9999px;margin-bottom:.5rem;}
+.tag svg{width:10px;height:10px;}
+
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem clamp(1rem,5vw,3rem);}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-brand{display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;color:var(--text);text-decoration:none;}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.footer-links a{font-size:.82rem;color:var(--text2);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--brand);}
+.footer-copy{font-size:.75rem;color:var(--text3);width:100%;margin-top:.5rem;}
+
+@media(max-width:768px){
+  .toc{display:none;}
+  .layout{padding:1rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+    <span class="nav-logo-text">SQUIDS</span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Policies</a>
+    <a href="/terms" style="color:var(--brand);background:var(--brand-light);">Terms</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/community">Community</a>
+    <a href="/help">Help</a>
+    <a href="https://app.squids.co.za" class="nav-cta">Open App</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="breadcrumb">
+      <a href="/">Policies</a>
+      <span class="breadcrumb-sep">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
+      <span>Terms of Service</span>
+    </div>
+    <div class="page-hero-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      Legal Document
+    </div>
+    <h1>Terms of Service</h1>
+    <div class="page-hero-meta">
+      <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Last updated: 27 February 2026</div>
+      <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Governed by South African law</div>
+      <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>26 sections · ~15 min read</div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- TOC -->
+  <aside class="toc">
+    <div class="toc-inner">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">1</span>Introduction</a></li>
+        <li><a href="#s2"><span class="toc-num">2</span>Governing Law</a></li>
+        <li><a href="#s3"><span class="toc-num">3</span>Definitions</a></li>
+        <li><a href="#s4"><span class="toc-num">4</span>Eligibility</a></li>
+        <li><a href="#s5"><span class="toc-num">5</span>Account Registration</a></li>
+        <li><a href="#s6"><span class="toc-num">6</span>Description of Services</a></li>
+        <li><a href="#s7"><span class="toc-num">7</span>AI Services</a></li>
+        <li><a href="#s8"><span class="toc-num">8</span>User Content</a></li>
+        <li><a href="#s9"><span class="toc-num">9</span>Community Rules</a></li>
+        <li><a href="#s10"><span class="toc-num">10</span>Moderation Rights</a></li>
+        <div class="toc-divider"></div>
+        <li><a href="#s11"><span class="toc-num">11</span>Intellectual Property</a></li>
+        <li><a href="#s12"><span class="toc-num">12</span>Third-Party Services</a></li>
+        <li><a href="#s13"><span class="toc-num">13</span>Advertising</a></li>
+        <li><a href="#s14"><span class="toc-num">14</span>Disclaimers</a></li>
+        <li><a href="#s15"><span class="toc-num">15</span>Limitation of Liability</a></li>
+        <li><a href="#s16"><span class="toc-num">16</span>Indemnification</a></li>
+        <li><a href="#s17"><span class="toc-num">17</span>Privacy</a></li>
+        <li><a href="#s18"><span class="toc-num">18</span>Cybercrime</a></li>
+        <li><a href="#s19"><span class="toc-num">19</span>Termination</a></li>
+        <div class="toc-divider"></div>
+        <li><a href="#s20"><span class="toc-num">20</span>Data Retention</a></li>
+        <li><a href="#s21"><span class="toc-num">21</span>Changes to Terms</a></li>
+        <li><a href="#s22"><span class="toc-num">22</span>Force Majeure</a></li>
+        <li><a href="#s23"><span class="toc-num">23</span>Electronic Comms</a></li>
+        <li><a href="#s24"><span class="toc-num">24</span>Severability</a></li>
+        <li><a href="#s25"><span class="toc-num">25</span>Entire Agreement</a></li>
+        <li><a href="#s26"><span class="toc-num">26</span>Contact</a></li>
+      </ul>
+      <div class="toc-divider"></div>
+      <div style="margin-top:.75rem;display:flex;flex-direction:column;gap:.4rem;">
+        <a href="/privacy" class="cross-ref" style="display:flex;gap:6px;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy Policy</a>
+        <a href="/community" class="cross-ref" style="display:flex;gap:6px;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Community Guidelines</a>
+        <a href="/cookies" class="cross-ref" style="display:flex;gap:6px;align-items:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Cookie Policy</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="info-box" style="margin-bottom:1.5rem;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>By using SQUIDS you agree to these Terms. They work alongside our <a href="/privacy">Privacy Policy</a> and <a href="/community">Community Guidelines</a> — please read all three.</p>
+    </div>
+
+    <div id="s1" class="section-block block-notice">
+      <div class="section-head">
+        <div class="section-num-badge">1</div>
+        <h2>Introduction</h2>
+      </div>
+      <div class="section-body">
+        <p>Welcome to <strong>SQUIDS</strong> ("SQUIDS", "we", "us", or "our"), a social media platform operated via <a href="https://squids.co.za">squids.co.za</a> and associated applications, services, and technologies (collectively, the "Platform").</p>
+        <p>These Terms of Service ("Terms") constitute a legally binding agreement between SQUIDS, its owners, operators, affiliates, licensors, partners, employees, contractors, and successors; and you, the user ("User", "you", or "your").</p>
+        <div class="highlight-box">
+          <p>By accessing, registering for, or using SQUIDS, you confirm that you have read and understood these Terms, agree to be legally bound by them, and consent to electronic contracting under South African law. <strong>If you do not agree, you must immediately discontinue use of the Platform.</strong></p>
+        </div>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">Related:</span>
+          <a href="/privacy" class="cross-ref">Privacy Policy</a>
+          <a href="/community" class="cross-ref">Community Guidelines</a>
+          <a href="/cookies" class="cross-ref">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s2" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">2</div>
+        <h2>Governing Law and Jurisdiction</h2>
+      </div>
+      <div class="section-body">
+        <p>These Terms are governed by and interpreted in accordance with the laws of the Republic of South Africa, including but not limited to:</p>
+        <ul>
+          <li>Electronic Communications and Transactions Act 25 of 2002 (ECTA)</li>
+          <li>Consumer Protection Act 68 of 2008 (CPA)</li>
+          <li>Protection of Personal Information Act 4 of 2013 (POPIA)</li>
+          <li>Cybercrimes Act 19 of 2020</li>
+          <li>Common law principles applicable within South Africa</li>
+        </ul>
+        <p>You consent to the exclusive jurisdiction of South African courts for any disputes arising from your use of the Platform.</p>
+      </div>
+    </div>
+
+    <div id="s3" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">3</div>
+        <h2>Definitions</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li><strong>Account</strong> — a registered SQUIDS user profile.</li>
+          <li><strong>Content</strong> — text, media, messages, comments, AI prompts, uploads, and communications.</li>
+          <li><strong>AI Services</strong> — chatbot or artificial intelligence features integrated into SQUIDS.</li>
+          <li><strong>Affiliates</strong> — related entities, partners, advertisers, licensors, and service providers.</li>
+          <li><strong>User Content</strong> — content submitted, posted, or shared by users on the Platform.</li>
+          <li><strong>Platform</strong> — squids.co.za, app.squids.co.za, and all associated services and apps.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="s4" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">4</div>
+        <h2>Eligibility</h2>
+      </div>
+      <div class="section-body">
+        <p>You may only use SQUIDS if you meet the following requirements:</p>
+        <ul>
+          <li>You are at least <strong>13 years old</strong>, or the minimum age required under South African law.</li>
+          <li>Users under 18 must have parental or guardian consent.</li>
+          <li>You are legally capable of entering into binding agreements.</li>
+          <li>Your account has not been previously terminated by SQUIDS for violations.</li>
+        </ul>
+        <p>We reserve the right to suspend accounts suspected of violating eligibility requirements without prior notice.</p>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">See also:</span>
+          <a href="#s19" class="cross-ref">§19 Termination</a>
+          <a href="/community#minors" class="cross-ref">Community: Minors</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s5" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">5</div>
+        <h2>Account Registration</h2>
+      </div>
+      <div class="section-body">
+        <p>By creating an account, you agree to:</p>
+        <ul>
+          <li>Provide accurate and truthful information during registration.</li>
+          <li>Maintain the confidentiality of your login credentials.</li>
+          <li>Accept responsibility for all activity conducted under your account.</li>
+          <li>Notify us immediately of any unauthorized access at <a href="mailto:support@squids.co.za">support@squids.co.za</a>.</li>
+        </ul>
+        <p>SQUIDS is not liable for losses resulting from unauthorized access caused by user negligence in protecting login credentials.</p>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">Related:</span>
+          <a href="/help#account" class="cross-ref">Account Help</a>
+          <a href="#s19" class="cross-ref">§19 Termination</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s6" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">6</div>
+        <h2>Description of Services</h2>
+      </div>
+      <div class="section-body">
+        <p>SQUIDS provides a range of services including:</p>
+        <ul>
+          <li>Social networking and community features</li>
+          <li>User-generated content sharing — posts, comments, questions, and answers</li>
+          <li>Messaging and communication tools between users</li>
+          <li>AI chatbot services powered through third-party AI providers</li>
+          <li>Community interaction tools including voting, following, and topic subscription</li>
+          <li>Notifications and activity tracking features</li>
+        </ul>
+        <div class="warning-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p>Services may change, evolve, or be discontinued at any time without prior notice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="s7" class="section-block block-warning">
+      <div class="section-head">
+        <div class="section-num-badge">7</div>
+        <h2>Artificial Intelligence Services</h2>
+      </div>
+      <div class="section-body">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>AI-Powered Features</div>
+        <p>SQUIDS integrates AI functionality. By using AI features, you acknowledge that:</p>
+        <ul>
+          <li>AI responses are generated automatically and may be inaccurate or incomplete.</li>
+          <li>AI outputs do <strong>not</strong> constitute professional, legal, medical, or financial advice.</li>
+          <li>You use AI features at your own risk.</li>
+        </ul>
+        <p>Your use of AI features is also subject to applicable third-party terms, including those of our AI service providers.</p>
+        <h3>7.1 AI Usage Responsibilities</h3>
+        <p>You agree NOT to use AI services to:</p>
+        <ul>
+          <li>Generate unlawful, harmful, or deceptive content.</li>
+          <li>Harass, impersonate, or threaten individuals.</li>
+          <li>Produce misinformation or disinformation.</li>
+          <li>Create malicious software or exploit code.</li>
+          <li>Violate intellectual property rights.</li>
+        </ul>
+        <h3>7.2 AI Data Processing</h3>
+        <p>Prompts submitted to AI systems may be processed by third-party providers solely for service delivery, safety, and improvement purposes in accordance with their respective policies.</p>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">Related:</span>
+          <a href="/privacy#ai" class="cross-ref">Privacy: AI Data</a>
+          <a href="/community#ai" class="cross-ref">Community: AI Rules</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s8" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">8</div>
+        <h2>User Content</h2>
+      </div>
+      <div class="section-body">
+        <p>You retain ownership of content you post on SQUIDS. However, by uploading or posting content, you grant SQUIDS a worldwide, non-exclusive, royalty-free, transferable, and sub-licensable licence to host, display, reproduce, distribute, and promote such content for the operation of the Platform.</p>
+        <p>You are solely responsible for all content you submit and warrant that it does not infringe any third-party rights or violate any applicable laws.</p>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">See also:</span>
+          <a href="#s11" class="cross-ref">§11 Intellectual Property</a>
+          <a href="/community#content" class="cross-ref">Community: Content Rules</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s9" class="section-block block-warning">
+      <div class="section-head">
+        <div class="section-num-badge">9</div>
+        <h2>Community Rules</h2>
+      </div>
+      <div class="section-body">
+        <p>Users must <strong>NOT</strong> engage in the following prohibited conduct:</p>
+        <ul>
+          <li>Post illegal material of any kind.</li>
+          <li>Share hate speech prohibited under South African law.</li>
+          <li>Promote violence, terrorism, or self-harm.</li>
+          <li>Upload child sexual abuse material (CSAM) — this is a criminal offence.</li>
+          <li>Harass, bully, stalk, or threaten other users.</li>
+          <li>Spread malware, spyware, or harmful code.</li>
+          <li>Conduct scams, phishing, or financial fraud.</li>
+          <li>Impersonate other users, public figures, or SQUIDS staff.</li>
+        </ul>
+        <div class="highlight-box">
+          <p>SQUIDS reserves absolute discretion to remove content or terminate accounts. See our full <a href="/community">Community Guidelines</a> for detailed rules and enforcement procedures.</p>
+        </div>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">Full rules:</span>
+          <a href="/community" class="cross-ref">Community Guidelines →</a>
+          <a href="#s10" class="cross-ref">§10 Moderation Rights</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s10" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">10</div>
+        <h2>Platform Moderation Rights</h2>
+      </div>
+      <div class="section-body">
+        <p>SQUIDS may at any time and without prior notice:</p>
+        <ul>
+          <li>Remove or restrict any content that violates these Terms or our <a href="/community">Community Guidelines</a>.</li>
+          <li>Suspend or permanently terminate user accounts.</li>
+          <li>Restrict a user's visibility or reach on the Platform.</li>
+          <li>Report unlawful activity to South African law enforcement authorities.</li>
+        </ul>
+        <p>Moderation decisions are final unless otherwise required by applicable law.</p>
+      </div>
+    </div>
+
+    <div id="s11" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">11</div>
+        <h2>Intellectual Property</h2>
+      </div>
+      <div class="section-body">
+        <p>All Platform elements including branding, logos, software, design, algorithms, and AI integrations remain the exclusive property of SQUIDS or its licensors and are protected under applicable South African and international intellectual property laws.</p>
+        <p>You may not:</p>
+        <ul>
+          <li>Copy, reproduce, or distribute Platform elements without written authorisation.</li>
+          <li>Reverse engineer, decompile, or disassemble any part of the Platform.</li>
+          <li>Commercially exploit the Platform or its content.</li>
+          <li>Use SQUIDS trademarks without explicit written consent.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="s12" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">12</div>
+        <h2>Third-Party Services and Affiliates</h2>
+      </div>
+      <div class="section-body">
+        <p>SQUIDS may integrate services provided by affiliates or partners. We are not responsible for third-party websites, external services, advertiser claims, or partner technologies.</p>
+        <p>Your interactions with third parties are solely between you and them. We encourage you to review the privacy policies and terms of any third-party services you access through the Platform.</p>
+      </div>
+    </div>
+
+    <div id="s13" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">13</div>
+        <h2>Advertising and Affiliate Protection</h2>
+      </div>
+      <div class="section-body">
+        <p>SQUIDS may display advertisements or sponsored content. Affiliates and advertisers are protected from liability arising from user misuse of services.</p>
+        <p>Users may not:</p>
+        <ul>
+          <li>Manipulate advertising systems or engagement metrics.</li>
+          <li>Click-farm or generate fraudulent ad impressions.</li>
+          <li>Use bots or automated tools to interact with sponsored content.</li>
+        </ul>
+        <p>Fraudulent activity may result in permanent bans and legal action.</p>
+      </div>
+    </div>
+
+    <div id="s14" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">14</div>
+        <h2>Disclaimers</h2>
+      </div>
+      <div class="section-body">
+        <p>The Platform is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE."</strong> SQUIDS makes no guarantees regarding:</p>
+        <ul>
+          <li>Uninterrupted or error-free service.</li>
+          <li>Accuracy or reliability of AI-generated outputs.</li>
+          <li>Content published by other users.</li>
+          <li>Platform security against all cyber threats.</li>
+        </ul>
+        <div class="warning-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p>Use of the Platform is entirely at your own risk.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="s15" class="section-block block-warning">
+      <div class="section-head">
+        <div class="section-num-badge">15</div>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <div class="section-body">
+        <p>To the fullest extent permitted by South African law, SQUIDS, its owners, employees, affiliates, and partners shall <strong>NOT</strong> be liable for:</p>
+        <ul>
+          <li>Indirect or consequential damages of any kind.</li>
+          <li>Loss of profits, revenue, or business opportunities.</li>
+          <li>Reputational harm arising from user-generated content.</li>
+          <li>Data loss or security breaches not caused by our gross negligence.</li>
+          <li>Harm arising from AI-generated outputs or misinformation.</li>
+          <li>Content posted or shared by other users.</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Cap on liability:</strong> Total liability shall not exceed the amount paid by you to SQUIDS in the preceding 12 months. If you have not paid anything, our total liability to you is zero.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="s16" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">16</div>
+        <h2>Indemnification</h2>
+      </div>
+      <div class="section-body">
+        <p>You agree to indemnify, defend, and hold harmless SQUIDS and its affiliates, officers, employees, and contractors from and against any and all claims, damages, losses, costs, and expenses (including legal fees) arising out of or relating to:</p>
+        <ul>
+          <li>Content you post, share, or transmit on the Platform.</li>
+          <li>Misuse of the Platform or violation of these Terms.</li>
+          <li>Violation of any applicable law or regulation.</li>
+          <li>Infringement of any third-party rights.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="s17" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">17</div>
+        <h2>Privacy</h2>
+      </div>
+      <div class="section-body">
+        <p>Use of SQUIDS is also governed by our <a href="/privacy">Privacy Policy</a>, which is fully compliant with the Protection of Personal Information Act 4 of 2013 (POPIA).</p>
+        <p>Our Privacy Policy explains how we collect, store, use, and share your personal information, and outlines your rights as a data subject under South African law.</p>
+        <div class="cross-refs-row">
+          <span class="cross-refs-label">Read:</span>
+          <a href="/privacy" class="cross-ref">Full Privacy Policy →</a>
+          <a href="/privacy#rights" class="cross-ref">Your POPIA Rights</a>
+          <a href="/cookies" class="cross-ref">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="s18" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">18</div>
+        <h2>Security and Cybercrime Compliance</h2>
+      </div>
+      <div class="section-body">
+        <p>Under the Cybercrimes Act 19 of 2020, users must not:</p>
+        <ul>
+          <li>Access accounts or systems without authorisation.</li>
+          <li>Distribute malware, ransomware, or harmful software.</li>
+          <li>Scrape Platform data unlawfully or using automated tools.</li>
+          <li>Attempt to intrude into or disrupt Platform systems.</li>
+          <li>Intercept or tamper with electronic communications.</li>
+        </ul>
+        <p>Violations may be reported to South African law enforcement including the South African Police Service (SAPS) Cybercrime Unit.</p>
+      </div>
+    </div>
+
+    <div id="s19" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">19</div>
+        <h2>Termination</h2>
+      </div>
+      <div class="section-body">
+        <p>We may suspend or permanently terminate your account for:</p>
+        <ul>
+          <li>Violations of these Terms or our <a href="/community">Community Guidelines</a>.</li>
+          <li>Legal requirements or court orders.</li>
+          <li>Security risks or fraudulent activity.</li>
+          <li>Operational decisions at our sole discretion.</li>
+        </ul>
+        <p>Termination may occur without prior notice. Upon termination, your right to use the Platform ceases immediately. Sections that by their nature should survive termination (including liability limitations and indemnification) shall continue to apply.</p>
+      </div>
+    </div>
+
+    <div id="s20" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">20</div>
+        <h2>Data Retention</h2>
+      </div>
+      <div class="section-body">
+        <p>We may retain your data as required by applicable South African law, for dispute resolution, fraud prevention, and platform improvement purposes, even after account deletion.</p>
+        <p>For full details on how long we keep your data and your deletion rights, see our <a href="/privacy#retention">Privacy Policy — Data Retention</a>.</p>
+      </div>
+    </div>
+
+    <div id="s21" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">21</div>
+        <h2>Changes to Terms</h2>
+      </div>
+      <div class="section-body">
+        <p>We may modify these Terms at any time. When we make material changes, we will:</p>
+        <ul>
+          <li>Update the "Last Updated" date at the top of this page.</li>
+          <li>Notify users via in-app notification or email where appropriate.</li>
+        </ul>
+        <p>Continued use of the Platform after updates constitutes acceptance of the revised Terms. We recommend reviewing this page periodically. You can always find the latest version at <a href="https://policies.squids.co.za/terms">policies.squids.co.za/terms</a>.</p>
+      </div>
+    </div>
+
+    <div id="s22" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">22</div>
+        <h2>Force Majeure</h2>
+      </div>
+      <div class="section-body">
+        <p>SQUIDS shall not be liable for delays or failures caused by events beyond our reasonable control, including but not limited to: power outages, internet infrastructure failures, cyberattacks, governmental actions, natural disasters, pandemics, or civil unrest.</p>
+      </div>
+    </div>
+
+    <div id="s23" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">23</div>
+        <h2>Electronic Communications</h2>
+      </div>
+      <div class="section-body">
+        <p>You consent to receive notices electronically via website announcements, email, and in-app notifications in accordance with the Electronic Communications and Transactions Act 25 of 2002 (ECTA). Electronic notices have the same legal effect as paper notices.</p>
+      </div>
+    </div>
+
+    <div id="s24" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">24</div>
+        <h2>Severability</h2>
+      </div>
+      <div class="section-body">
+        <p>If any provision of these Terms is found invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall continue in full force and effect. The invalid provision will be modified to the minimum extent necessary to make it enforceable.</p>
+      </div>
+    </div>
+
+    <div id="s25" class="section-block">
+      <div class="section-head">
+        <div class="section-num-badge">25</div>
+        <h2>Entire Agreement</h2>
+      </div>
+      <div class="section-body">
+        <p>These Terms, together with the <a href="/privacy">Privacy Policy</a>, <a href="/community">Community Guidelines</a>, and <a href="/cookies">Cookie Policy</a>, constitute the entire agreement between you and SQUIDS regarding your use of the Platform. They supersede all prior agreements, understandings, and representations.</p>
+      </div>
+    </div>
+
+    <div id="s26" class="section-block block-notice">
+      <div class="section-head">
+        <div class="section-num-badge">26</div>
+        <h2>Contact Information</h2>
+      </div>
+      <div class="section-body">
+        <p>Legal inquiries and formal notices may be directed to the SQUIDS Legal Department:</p>
+        <div class="highlight-box">
+          <p><strong>SQUIDS Legal Department</strong><br/>
+          Website: <a href="https://squids.co.za">squids.co.za</a><br/>
+          Policy Hub: <a href="https://policies.squids.co.za">policies.squids.co.za</a><br/>
+          Legal Email: <a href="mailto:legal@squids.co.za">legal@squids.co.za</a><br/>
+          Support: <a href="mailto:support@squids.co.za">support@squids.co.za</a></p>
+        </div>
+        <div class="cross-refs-row" style="margin-top:1rem;">
+          <a href="/help" class="cross-ref">Help Centre</a>
+          <a href="/privacy" class="cross-ref">Privacy Policy</a>
+          <a href="/community" class="cross-ref">Community Guidelines</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-brand">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+      SQUIDS
+    </a>
+    <div class="footer-links">
+      <a href="/">Policy Hub</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/community">Community</a>
+      <a href="/cookies">Cookies</a>
+      <a href="/help">Help</a>
+      <a href="mailto:legal@squids.co.za">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 SQUIDS. All rights reserved. Governed by the laws of the Republic of South Africa. · <a href="https://squids.co.za">squids.co.za</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

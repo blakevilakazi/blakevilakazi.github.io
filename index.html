@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Squids Policies — Legal Hub</title>
+<meta name="description" content="The official Squids policy hub. Read our Terms of Service, Privacy Policy, Community Guidelines, Cookie Policy, and get Help & Support."/>
+<link rel="canonical" href="https://policies.squids.co.za/"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --brand:#ff4500;
+  --brand2:#e03d00;
+  --brand-light:#fff2ee;
+  --brand-mid:rgba(255,69,0,.1);
+  --text:#111318;
+  --text2:#4b5563;
+  --text3:#9ca3af;
+  --bg:#ffffff;
+  --bg2:#f9fafb;
+  --bg3:#f3f4f6;
+  --border:#e5e7eb;
+  --border2:#d1d5db;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);
+  --shadow-lg:0 4px 24px rgba(0,0,0,.08),0 12px 40px rgba(0,0,0,.05);
+  --radius:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;min-height:100vh;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 1px 0 var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:.25rem;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;padding:.4rem .75rem;border-radius:8px;transition:color .15s,background .15s;}
+.nav-links a:hover{color:var(--text);background:var(--bg3);}
+.nav-cta{background:var(--brand)!important;color:#fff!important;padding:.45rem 1.1rem!important;border-radius:9999px!important;font-weight:700!important;font-size:.82rem!important;transition:background .15s,transform .15s!important;}
+.nav-cta:hover{background:var(--brand2)!important;transform:translateY(-1px)!important;color:#fff!important;}
+.nav-links a.active{color:var(--brand);background:var(--brand-light);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#fff 0%,#fff7f5 50%,#fff 100%);padding:clamp(3.5rem,8vw,6rem) clamp(1rem,5vw,3rem) clamp(2rem,5vw,4rem);text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,69,0,.07) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--brand-light);border:1px solid rgba(255,69,0,.2);color:var(--brand);font-family:'Outfit',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem 1rem;border-radius:9999px;margin-bottom:1.5rem;}
+.hero h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;color:var(--text);margin-bottom:1.25rem;letter-spacing:-.02em;}
+.hero h1 span{color:var(--brand);}
+.hero p{font-size:1.05rem;color:var(--text2);max-width:560px;margin:0 auto 2.5rem;line-height:1.7;}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;padding:.7rem 1.6rem;border-radius:9999px;text-decoration:none;transition:background .15s,transform .15s,box-shadow .15s;}
+.btn-primary:hover{background:var(--brand2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,69,0,.25);}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--text);font-family:'Outfit',sans-serif;font-weight:600;font-size:.9rem;padding:.7rem 1.6rem;border-radius:9999px;text-decoration:none;border:1.5px solid var(--border2);transition:border-color .15s,transform .15s,box-shadow .15s;}
+.btn-secondary:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08);}
+
+/* POLICY CARDS GRID */
+.section{padding:clamp(2.5rem,6vw,5rem) clamp(1rem,5vw,3rem);}
+.section-label{font-family:'Outfit',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.75rem;}
+.section-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:.75rem;letter-spacing:-.02em;}
+.section-sub{color:var(--text2);font-size:.975rem;max-width:540px;margin-bottom:2.5rem;line-height:1.7;}
+
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;}
+.policy-card{background:white;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s,transform .2s;display:flex;flex-direction:column;gap:.75rem;position:relative;overflow:hidden;}
+.policy-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,69,0,.03) 0%,transparent 60%);opacity:0;transition:opacity .2s;}
+.policy-card:hover{border-color:rgba(255,69,0,.4);box-shadow:0 8px 32px rgba(255,69,0,.08);transform:translateY(-3px);}
+.policy-card:hover::before{opacity:1;}
+.card-icon{width:44px;height:44px;background:var(--brand-light);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.card-icon svg{width:22px;height:22px;color:var(--brand);}
+.card-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;color:var(--text);}
+.card-desc{font-size:.875rem;color:var(--text2);line-height:1.6;flex:1;}
+.card-link{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:700;color:var(--brand);font-family:'Outfit',sans-serif;margin-top:.25rem;}
+.card-link svg{width:14px;height:14px;}
+.card-badge{display:inline-flex;align-items:center;gap:4px;background:var(--brand-light);color:var(--brand);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .6rem;border-radius:9999px;width:fit-content;}
+
+/* HIGHLIGHTS */
+.highlights{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;}
+.highlight-item{display:flex;flex-direction:column;gap:.5rem;}
+.highlight-num{font-family:'Outfit',sans-serif;font-weight:900;font-size:2rem;color:var(--brand);}
+.highlight-label{font-size:.875rem;color:var(--text2);font-weight:500;}
+
+/* QUICK LINKS */
+.quick-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;}
+.quick-link{display:inline-flex;align-items:center;gap:5px;background:var(--bg3);color:var(--text2);font-size:.8rem;font-weight:600;padding:.35rem .85rem;border-radius:9999px;text-decoration:none;border:1px solid var(--border);transition:all .15s;}
+.quick-link:hover{background:var(--brand-light);color:var(--brand);border-color:rgba(255,69,0,.3);}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--text);color:white;padding:clamp(2rem,5vw,3.5rem) clamp(1rem,5vw,3rem);}
+.contact-strip h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem;letter-spacing:-.02em;}
+.contact-strip p{color:rgba(255,255,255,.65);font-size:.95rem;margin-bottom:1.75rem;max-width:480px;line-height:1.7;}
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.contact-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:1.25rem;text-decoration:none;color:white;transition:background .15s;}
+.contact-card:hover{background:rgba(255,255,255,.12);}
+.contact-card-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.4rem;}
+.contact-card-val{font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,3rem);}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;}
+.footer-brand{max-width:280px;}
+.footer-brand-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.1rem;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:.5rem;}
+.footer-brand p{font-size:.82rem;color:var(--text2);line-height:1.6;}
+.footer-cols{display:flex;gap:3rem;flex-wrap:wrap;}
+.footer-col h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem;}
+.footer-col a{display:block;font-size:.875rem;color:var(--text2);text-decoration:none;margin-bottom:.4rem;transition:color .15s;}
+.footer-col a:hover{color:var(--brand);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;}
+.footer-bottom p{font-size:.78rem;color:var(--text3);}
+.footer-bottom a{color:var(--text3);text-decoration:none;}
+.footer-bottom a:hover{color:var(--brand);}
+
+/* QUOTE BANNER */
+.quote-banner{background:linear-gradient(135deg,var(--brand) 0%,#ff6b35 100%);color:white;padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,3rem);text-align:center;}
+.quote-banner blockquote{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.5vw,1.5rem);max-width:700px;margin:0 auto .75rem;line-height:1.4;letter-spacing:-.01em;}
+.quote-banner cite{font-size:.82rem;opacity:.8;font-style:normal;}
+
+@media(max-width:640px){
+  .nav-links .hide-mobile{display:none;}
+  .footer-cols{gap:2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+    <span class="nav-logo-text">SQUIDS</span>
+  </a>
+  <div class="nav-links">
+    <a href="/" class="active">Policies</a>
+    <a href="/terms" class="hide-mobile">Terms</a>
+    <a href="/privacy" class="hide-mobile">Privacy</a>
+    <a href="/community" class="hide-mobile">Community</a>
+    <a href="/help">Help</a>
+    <a href="https://app.squids.co.za" class="nav-cta">Open App</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Legal & Policy Hub
+  </div>
+  <h1>Transparency is at the<br/>heart of <span>SQUIDS</span></h1>
+  <p>Everything you need to know about how we operate, protect your data, and keep our community safe — all in one place.</p>
+  <div class="hero-actions">
+    <a href="/terms" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      Read Terms of Service
+    </a>
+    <a href="/help" class="btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Help Centre
+    </a>
+  </div>
+</section>
+
+<!-- POLICY STATS -->
+<div class="highlights">
+  <div class="section" style="padding-top:2rem;padding-bottom:2rem;">
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="highlight-num">5</div>
+        <div class="highlight-label">Policy documents</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">26</div>
+        <div class="highlight-label">Terms of Service clauses</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">POPIA</div>
+        <div class="highlight-label">SA data protection compliant</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">2026</div>
+        <div class="highlight-label">Last reviewed & updated</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POLICY CARDS -->
+<section class="section">
+  <div class="section-label">Our Policies</div>
+  <div class="section-title">Pick a document to read</div>
+  <div class="section-sub">All our legal documents are written to be human-readable. We believe you deserve to understand the rules before you agree to them.</div>
+
+  <div class="cards-grid">
+
+    <a href="/terms" class="policy-card">
+      <div class="card-badge">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Required reading
+      </div>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+      </div>
+      <div class="card-title">Terms of Service</div>
+      <div class="card-desc">26 clauses covering your rights and obligations as a SQUIDS user. Governed by South African law including ECTA, CPA, and POPIA.</div>
+      <div class="card-link">Read Terms <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <a href="/privacy" class="policy-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="card-title">Privacy Policy</div>
+      <div class="card-desc">How we collect, store, use, and protect your personal information in full compliance with POPIA (Protection of Personal Information Act 4 of 2013).</div>
+      <div class="card-link">Read Privacy Policy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <a href="/community" class="policy-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="card-title">Community Guidelines</div>
+      <div class="card-desc">The rules that keep SQUIDS a safe, respectful, and welcoming platform for everyone. Violations may result in account suspension.</div>
+      <div class="card-link">Read Guidelines <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <a href="/cookies" class="policy-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></svg>
+      </div>
+      <div class="card-title">Cookie Policy</div>
+      <div class="card-desc">A full explanation of how and why SQUIDS uses cookies and similar tracking technologies, and how you can manage your preferences.</div>
+      <div class="card-link">Read Cookie Policy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <a href="/help" class="policy-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="card-title">Help Centre</div>
+      <div class="card-desc">FAQs, troubleshooting guides, account support, and how to report issues. Our support team is reachable at support@squids.co.za.</div>
+      <div class="card-link">Visit Help Centre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+    <a href="mailto:legal@squids.co.za" class="policy-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.3 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16"/></svg>
+      </div>
+      <div class="card-title">Legal Contact</div>
+      <div class="card-desc">For formal legal inquiries, POPIA data requests, or intellectual property matters, contact our legal team directly.</div>
+      <div class="card-link">legal@squids.co.za <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<div class="quote-banner">
+  <blockquote>"We built SQUIDS because Africa deserves a social platform that puts community, conversation, and creativity first — and that means being transparent about how we operate."</blockquote>
+  <cite>— The SQUIDS Team, squids.co.za</cite>
+</div>
+
+<!-- QUICK NAVIGATION -->
+<section class="section" style="padding-top:3rem;padding-bottom:3rem;">
+  <div class="section-label">Quick navigation</div>
+  <div class="section-title">Jump to a specific section</div>
+  <div class="quick-links">
+    <a href="/terms#s1" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Terms: Introduction
+    </a>
+    <a href="/terms#s4" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Terms: Eligibility
+    </a>
+    <a href="/terms#s7" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      AI Services
+    </a>
+    <a href="/terms#s9" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Community Rules
+    </a>
+    <a href="/terms#s15" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Limitation of Liability
+    </a>
+    <a href="/privacy" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Privacy &amp; POPIA
+    </a>
+    <a href="/community" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Community Standards
+    </a>
+    <a href="/cookies" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Cookie Preferences
+    </a>
+    <a href="/help" class="quick-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Help &amp; Support
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <h2>Get in touch with us</h2>
+  <p>Our team is here to answer questions about your rights, our policies, or how to use the platform safely.</p>
+  <div class="contact-cards">
+    <a href="mailto:support@squids.co.za" class="contact-card">
+      <div class="contact-card-label">General Support</div>
+      <div class="contact-card-val">support@squids.co.za</div>
+    </a>
+    <a href="mailto:legal@squids.co.za" class="contact-card">
+      <div class="contact-card-label">Legal &amp; POPIA</div>
+      <div class="contact-card-val">legal@squids.co.za</div>
+    </a>
+    <a href="https://app.squids.co.za" class="contact-card">
+      <div class="contact-card-label">Main Platform</div>
+      <div class="contact-card-val">app.squids.co.za</div>
+    </a>
+    <a href="https://squids.co.za" class="contact-card">
+      <div class="contact-card-label">Website</div>
+      <div class="contact-card-val">squids.co.za</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        <svg width="24" height="24" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+        SQUIDS
+      </div>
+      <p>Africa's social platform for questions, ideas, and real conversation. Built with transparency and community in mind.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Policies</h4>
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/community">Community Guidelines</a>
+        <a href="/cookies">Cookie Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="/help">Help Centre</a>
+        <a href="mailto:support@squids.co.za">Contact Support</a>
+        <a href="mailto:legal@squids.co.za">Legal Inquiries</a>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="https://squids.co.za">squids.co.za</a>
+        <a href="https://app.squids.co.za">Open App</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 SQUIDS. All rights reserved. Governed by the laws of the Republic of South Africa.</p>
+    <p><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/community">Community</a> · <a href="mailto:legal@squids.co.za">Legal</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

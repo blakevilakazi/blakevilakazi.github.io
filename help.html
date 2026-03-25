@@ -1,69 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Squids Help Center | Support & FAQ</title>
-
-<meta name="description" content="Official Squids Help Center. Get account help, troubleshooting, chatbot assistance, and platform support for Squids users.">
-<meta name="keywords" content="Squids help, Squids support, Squids FAQ, Squids account help South Africa">
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://squids.co.za/help">
-
-<!-- SEO Structured Data -->
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"Organization",
- "name":"Squids",
- "url":"https://squids.co.za",
- "contactPoint":{
-   "@type":"ContactPoint",
-   "email":"support@squids.co.za",
-   "contactType":"customer support"
- }
-}
-</script>
-
-<link rel="icon" href="favicon.ico">
-
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Help Centre — SQUIDS</title>
+<meta name="description" content="SQUIDS Help Centre. Get help with your account, learn how to use the platform, report issues, and contact support."/>
+<link rel="canonical" href="https://policies.squids.co.za/help"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-body{margin:0;font-family:system-ui;background:#070b18;color:#e5e7eb;}
-.card{max-width:900px;margin:60px auto;background:#0f172a;padding:40px;border-radius:14px;}
-h1{color:#3b82f6;}
-footer{text-align:center;padding:40px;opacity:.6;}
+:root{--brand:#ff4500;--brand2:#e03d00;--brand-light:#fff2ee;--text:#111318;--text2:#4b5563;--text3:#9ca3af;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--border:#e5e7eb;--radius:12px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.75;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:.25rem;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;padding:.4rem .75rem;border-radius:8px;transition:color .15s,background .15s;}
+.nav-links a:hover{color:var(--text);background:var(--bg3);}
+.nav-cta{background:var(--brand)!important;color:#fff!important;padding:.45rem 1.1rem!important;border-radius:9999px!important;font-weight:700!important;font-size:.82rem!important;}
+.hero{background:linear-gradient(135deg,var(--brand) 0%,#ff6b35 100%);padding:clamp(3rem,7vw,5rem) clamp(1rem,5vw,3rem);text-align:center;color:white;}
+.hero h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.02em;margin-bottom:.75rem;}
+.hero p{font-size:1.05rem;opacity:.85;max-width:500px;margin:0 auto 1.75rem;}
+.search-bar{display:flex;max-width:480px;margin:0 auto;background:white;border-radius:9999px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15);}
+.search-bar input{flex:1;border:none;outline:none;padding:.75rem 1.25rem;font-size:.9rem;color:var(--text);font-family:'Inter',sans-serif;}
+.search-bar button{background:var(--brand);border:none;padding:.75rem 1.25rem;cursor:pointer;display:flex;align-items:center;}
+.search-bar button svg{width:18px;height:18px;color:white;}
+.layout{max-width:1000px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) clamp(1rem,5vw,3rem);}
+.section-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3rem;color:var(--text);margin-bottom:1.25rem;letter-spacing:-.01em;}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:2.5rem;}
+.faq-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;transition:border-color .15s,box-shadow .15s;}
+.faq-card:hover{border-color:rgba(255,69,0,.3);box-shadow:0 4px 16px rgba(255,69,0,.06);}
+.faq-q{font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:.5rem;}
+.faq-q svg{width:16px;height:16px;color:var(--brand);flex-shrink:0;margin-top:2px;}
+.faq-a{font-size:.85rem;color:var(--text2);line-height:1.6;}
+.faq-a a{color:var(--brand);text-decoration:none;font-weight:500;}
+.faq-a a:hover{text-decoration:underline;}
+.contact-section{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:2rem;}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.25rem;}
+.contact-card{background:white;border:1.5px solid var(--border);border-radius:10px;padding:1.25rem;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s;}
+.contact-card:hover{border-color:var(--brand);transform:translateY(-2px);}
+.contact-icon{width:36px;height:36px;background:var(--brand-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.65rem;}
+.contact-icon svg{width:18px;height:18px;color:var(--brand);}
+.contact-label{font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;color:var(--text);margin-bottom:.2rem;}
+.contact-val{font-size:.8rem;color:var(--text2);}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem clamp(1rem,5vw,3rem);}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-brand{display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;color:var(--text);text-decoration:none;}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.footer-links a{font-size:.82rem;color:var(--text2);text-decoration:none;}
+.footer-links a:hover{color:var(--brand);}
+.footer-copy{font-size:.75rem;color:var(--text3);width:100%;margin-top:.5rem;}
 </style>
-
 </head>
-
 <body>
+<nav>
+  <a href="/" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+    <span class="nav-logo-text">SQUIDS</span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Policies</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/community">Community</a>
+    <a href="/help" style="color:var(--brand);background:var(--brand-light);">Help</a>
+    <a href="https://app.squids.co.za" class="nav-cta">Open App</a>
+  </div>
+</nav>
 
-<div class="card">
+<div class="hero">
+  <h1>How can we help?</h1>
+  <p>Search our help articles, browse FAQs, or contact our support team directly.</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Search help articles…" aria-label="Search help"/>
+    <button aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+  </div>
+</div>
 
-<h1>Squids Help Center</h1>
+<div class="layout">
 
-<h3>Contact Support</h3>
-<p>Email: <strong>support@squids.co.za</strong></p>
+  <div class="section-title">Frequently Asked Questions</div>
+  <div class="faq-grid">
 
-<h3>Account Assistance</h3>
-<p>If you experience login or account issues, contact support with your username and description of the issue.</p>
+    <div id="account" class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>How do I create a SQUIDS account?</div>
+      <div class="faq-a">Visit <a href="https://app.squids.co.za">app.squids.co.za</a> and click "Sign Up". Enter your email, choose a unique username, set a display name, and create a password. You'll receive a verification code to confirm your email.</div>
+    </div>
 
-<h3>AI Chatbot</h3>
-<p>
-The Squids chatbot uses Google AI Studio technology. Responses may occasionally be inaccurate and should not be treated as professional advice.
-</p>
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>I forgot my password. What do I do?</div>
+      <div class="faq-a">Go to the <a href="https://app.squids.co.za/auth/forgot-password">forgot password page</a>, enter your registered email, and we'll send you a reset link. Check your spam folder if you don't receive it within 5 minutes.</div>
+    </div>
 
-<h3>Report Abuse</h3>
-<p>Email support@squids.co.za with relevant details.</p>
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>How do I change my username?</div>
+      <div class="faq-a">Go to <strong>Settings → Account</strong> in the app. You can change your username once, and it must be unique. Your profile URL will update automatically.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Is the AI chatbot safe to use?</div>
+      <div class="faq-a">Yes, but always apply critical thinking. AI responses are generated automatically and may be inaccurate. They are not professional advice. See our <a href="/terms#s7">AI Services terms</a> for full details.</div>
+    </div>
+
+    <div id="report" class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>How do I report abuse or harmful content?</div>
+      <div class="faq-a">Use the report button on any post, comment, or profile in the app. For urgent cases, email <a href="mailto:support@squids.co.za">support@squids.co.za</a> with "URGENT" in the subject. See our <a href="/community#reporting">Community Guidelines: Reporting</a> for details.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>How is my data protected?</div>
+      <div class="faq-a">SQUIDS is fully compliant with POPIA (Protection of Personal Information Act). Your data is encrypted, never sold, and you have the right to access, correct, or delete it. See our <a href="/privacy">Privacy Policy</a>.</div>
+    </div>
+
+    <div id="appeal" class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>My account was suspended. How do I appeal?</div>
+      <div class="faq-a">Email <a href="mailto:support@squids.co.za">support@squids.co.za</a> within 14 days of suspension with the subject "Account Appeal — [your username]". Include your reasoning and any relevant context. All appeals are reviewed fairly.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>How do I delete my account?</div>
+      <div class="faq-a">Go to <strong>Settings → Account → Danger Zone</strong> in the app and click "Delete Account". This is permanent and cannot be undone. Your data is deleted within 90 days per our <a href="/privacy#retention">Privacy Policy</a>.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>What age do I need to be to use SQUIDS?</div>
+      <div class="faq-a">You must be at least 13 years old. Users aged 13–17 require parental or guardian consent. See <a href="/terms#s4">Terms §4: Eligibility</a> for full requirements.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>How do I submit a POPIA data request?</div>
+      <div class="faq-a">Email <a href="mailto:legal@squids.co.za">legal@squids.co.za</a> with subject "POPIA Data Request — [your username]". We respond within 30 days. See our <a href="/privacy#p9">Privacy Policy §9</a> for details.</div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="contact-section">
+    <div class="section-title" style="margin-bottom:.5rem;">Still need help?</div>
+    <p style="color:var(--text2);font-size:.9rem;margin-bottom:0;">Our team is available to assist you. Reach out through any of the channels below.</p>
+    <div class="contact-grid">
+      <a href="mailto:support@squids.co.za" class="contact-card">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="contact-label">General Support</div>
+        <div class="contact-val">support@squids.co.za</div>
+      </a>
+      <a href="mailto:legal@squids.co.za" class="contact-card">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+        <div class="contact-label">Legal &amp; POPIA</div>
+        <div class="contact-val">legal@squids.co.za</div>
+      </a>
+      <a href="https://app.squids.co.za" class="contact-card">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="contact-label">Open the App</div>
+        <div class="contact-val">app.squids.co.za</div>
+      </a>
+      <a href="https://squids.co.za" class="contact-card">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="contact-label">Website</div>
+        <div class="contact-val">squids.co.za</div>
+      </a>
+    </div>
+  </div>
+
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;">
+    <p style="font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:.4rem;">More policy documents</p>
+    <p style="font-size:.85rem;color:var(--text2);margin-bottom:1rem;">Browse all our legal and policy documents in one place.</p>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;">
+      <a href="/terms" style="display:inline-flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--border);color:var(--text2);font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:9999px;text-decoration:none;transition:all .15s;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Terms of Service</a>
+      <a href="/privacy" style="display:inline-flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--border);color:var(--text2);font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:9999px;text-decoration:none;transition:all .15s;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy Policy</a>
+      <a href="/community" style="display:inline-flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--border);color:var(--text2);font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:9999px;text-decoration:none;transition:all .15s;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Community</a>
+      <a href="/cookies" style="display:inline-flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--border);color:var(--text2);font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:9999px;text-decoration:none;transition:all .15s;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>Cookies</a>
+    </div>
+  </div>
 
 </div>
 
 <footer>
-Squids Support • support@squids.co.za
+  <div class="footer-inner">
+    <a href="/" class="footer-brand"><svg width="22" height="22" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>SQUIDS</a>
+    <div class="footer-links"><a href="/">Policy Hub</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/community">Community</a><a href="/cookies">Cookies</a><a href="/help">Help</a><a href="mailto:legal@squids.co.za">Legal</a></div>
+    <div class="footer-copy">© 2026 SQUIDS. All rights reserved. support@squids.co.za · squids.co.za</div>
+  </div>
 </footer>
-
 </body>
 </html>

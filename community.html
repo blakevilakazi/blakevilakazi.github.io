@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Community Guidelines — SQUIDS</title>
+<meta name="description" content="SQUIDS Community Guidelines. The rules that keep SQUIDS a safe, respectful, and welcoming platform for all South Africans."/>
+<link rel="canonical" href="https://policies.squids.co.za/community"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--brand:#ff4500;--brand2:#e03d00;--brand-light:#fff2ee;--text:#111318;--text2:#4b5563;--text3:#9ca3af;--bg:#fff;--bg2:#f9fafb;--bg3:#f3f4f6;--border:#e5e7eb;--red:#fef2f2;--red-border:#fecaca;--red-text:#991b1b;--green:#f0fdf4;--green-border:#bbf7d0;--green-text:#166534;--radius:12px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.75;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,3rem);height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:.25rem;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;padding:.4rem .75rem;border-radius:8px;transition:color .15s,background .15s;}
+.nav-links a:hover{color:var(--text);background:var(--bg3);}
+.nav-cta{background:var(--brand)!important;color:#fff!important;padding:.45rem 1.1rem!important;border-radius:9999px!important;font-weight:700!important;font-size:.82rem!important;}
+.nav-cta:hover{background:var(--brand2)!important;color:#fff!important;}
+.page-hero{background:var(--bg2);border-bottom:1px solid var(--border);padding:clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,3rem);}
+.breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--text3);margin-bottom:1.25rem;}
+.breadcrumb a{color:var(--text3);text-decoration:none;}.breadcrumb a:hover{color:var(--brand);}
+.page-hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-light);border:1px solid rgba(255,69,0,.2);color:var(--brand);font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .85rem;border-radius:9999px;margin-bottom:1rem;}
+.page-hero h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);letter-spacing:-.02em;margin-bottom:.75rem;line-height:1.15;}
+.page-hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text2);}
+.meta-item svg{width:14px;height:14px;color:var(--text3);}
+.layout{max-width:860px;margin:0 auto;padding:clamp(1.5rem,4vw,3rem) clamp(1rem,5vw,3rem);}
+.intro-quote{background:linear-gradient(135deg,var(--brand) 0%,#ff6b35 100%);color:white;border-radius:var(--radius);padding:1.75rem;margin-bottom:2rem;position:relative;overflow:hidden;}
+.intro-quote::before{content:'"';position:absolute;top:-20px;right:20px;font-family:'Outfit',sans-serif;font-weight:900;font-size:8rem;color:rgba(255,255,255,.1);line-height:1;}
+.intro-quote p{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;line-height:1.5;margin-bottom:.5rem;}
+.intro-quote cite{font-size:.8rem;opacity:.8;font-style:normal;}
+.rule-section{margin-bottom:2rem;border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;scroll-margin-top:84px;}
+.rule-head{display:flex;align-items:center;gap:.75rem;padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);}
+.rule-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rule-icon svg{width:18px;height:18px;}
+.rule-icon-brand{background:var(--brand-light);color:var(--brand);}
+.rule-icon-brand svg{color:var(--brand);}
+.rule-icon-red{background:var(--red);color:#dc2626;}
+.rule-icon-red svg{color:#dc2626;}
+.rule-icon-green{background:var(--green);color:#16a34a;}
+.rule-icon-green svg{color:#16a34a;}
+.rule-head h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;color:var(--text);}
+.rule-head-green{background:#f0fdf4;}
+.rule-head-red{background:#fef2f2;}
+.rule-head-default{background:var(--bg2);}
+.rule-body{padding:1.4rem;}
+.rule-body p{color:var(--text2);font-size:.925rem;margin-bottom:.75rem;}
+.rule-body p:last-child{margin-bottom:0;}
+.rule-body ul{color:var(--text2);font-size:.925rem;padding-left:1.4rem;margin-bottom:.75rem;}
+.rule-body li{margin-bottom:.3rem;}
+.rule-body strong{color:var(--text);font-weight:600;}
+.rule-body a{color:var(--brand);text-decoration:none;font-weight:500;}
+.rule-body a:hover{text-decoration:underline;}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.75rem 0;}
+.do-box,.dont-box{border-radius:8px;padding:1rem;}
+.do-box{background:var(--green);border:1px solid var(--green-border);}
+.dont-box{background:var(--red);border:1px solid var(--red-border);}
+.box-label{display:flex;align-items:center;gap:6px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;}
+.do-box .box-label{color:var(--green-text);}
+.dont-box .box-label{color:var(--red-text);}
+.box-label svg{width:14px;height:14px;}
+.do-box ul,.dont-box ul{font-size:.84rem;padding-left:1.2rem;}
+.do-box li{color:var(--green-text);margin-bottom:.25rem;}
+.dont-box li{color:var(--red-text);margin-bottom:.25rem;}
+.enforcement-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;margin:.75rem 0;}
+.enforcement-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:.85rem;text-align:center;}
+.enforcement-icon{font-size:1.4rem;margin-bottom:.35rem;}
+.enforcement-label{font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;color:var(--text);}
+.enforcement-desc{font-size:.75rem;color:var(--text2);margin-top:.2rem;}
+.cross-ref{display:inline-flex;align-items:center;gap:4px;background:var(--bg3);color:var(--text2);font-size:.78rem;font-weight:600;padding:.2rem .6rem;border-radius:6px;text-decoration:none;border:1px solid var(--border);transition:all .15s;margin:.15rem;}
+.cross-ref:hover{background:var(--brand-light);color:var(--brand);border-color:rgba(255,69,0,.3);}
+.cross-refs-row{margin:.75rem 0;display:flex;flex-wrap:wrap;gap:.25rem;align-items:center;}
+.cross-refs-label{font-size:.75rem;color:var(--text3);font-weight:600;margin-right:.25rem;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem clamp(1rem,5vw,3rem);}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-brand{display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;color:var(--text);text-decoration:none;}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.footer-links a{font-size:.82rem;color:var(--text2);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--brand);}
+.footer-copy{font-size:.75rem;color:var(--text3);width:100%;margin-top:.5rem;}
+@media(max-width:580px){.do-dont{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg width="30" height="30" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>
+    <span class="nav-logo-text">SQUIDS</span>
+  </a>
+  <div class="nav-links">
+    <a href="/">Policies</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a>
+    <a href="/community" style="color:var(--brand);background:var(--brand-light);">Community</a>
+    <a href="/help">Help</a>
+    <a href="https://app.squids.co.za" class="nav-cta">Open App</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div style="max-width:860px;margin:0 auto;">
+    <div class="breadcrumb">
+      <a href="/">Policies</a>
+      <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+      <span>Community Guidelines</span>
+    </div>
+    <div class="page-hero-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Community Standards
+    </div>
+    <h1>Community Guidelines</h1>
+    <div class="page-hero-meta">
+      <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Last updated: 27 February 2026</div>
+      <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>For all SQUIDS users</div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <div class="intro-quote">
+    <p>"SQUIDS is built on the belief that Africa deserves a social platform where ideas surface freely — but freedom comes with responsibility. These guidelines define what that means in practice."</p>
+    <cite>— The SQUIDS Team</cite>
+  </div>
+
+  <div id="overview" class="rule-section">
+    <div class="rule-head rule-head-default">
+      <div class="rule-icon rule-icon-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <h2>Why These Guidelines Exist</h2>
+    </div>
+    <div class="rule-body">
+      <p>SQUIDS is a place for genuine conversation, debate, questions, and ideas. These guidelines exist to ensure that everyone — regardless of background, opinion, or identity — can participate without fear of harassment, abuse, or harm.</p>
+      <p>These guidelines apply to all content on SQUIDS, including posts, comments, messages, AI interactions, usernames, and profile information. Violations may result in content removal, account suspension, or permanent bans.</p>
+      <div class="cross-refs-row">
+        <span class="cross-refs-label">See also:</span>
+        <a href="/terms#s9" class="cross-ref">Terms §9: Community Rules</a>
+        <a href="/terms#s10" class="cross-ref">Terms §10: Moderation</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" class="rule-section">
+    <div class="rule-head rule-head-default">
+      <div class="rule-icon rule-icon-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+      <h2>Content Standards</h2>
+    </div>
+    <div class="rule-body">
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="box-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Encouraged</div>
+          <ul>
+            <li>Ask genuine questions</li>
+            <li>Share thoughtful opinions</li>
+            <li>Debate ideas respectfully</li>
+            <li>Credit original creators</li>
+            <li>Post original content</li>
+            <li>Support fellow users</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <div class="box-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Not Allowed</div>
+          <ul>
+            <li>Illegal content of any kind</li>
+            <li>Hate speech or discrimination</li>
+            <li>Violence or threats</li>
+            <li>Spam or repetitive posts</li>
+            <li>Misleading misinformation</li>
+            <li>Sexual content involving minors</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="harassment" class="rule-section">
+    <div class="rule-head rule-head-red">
+      <div class="rule-icon rule-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+      <h2>Harassment &amp; Abuse — Zero Tolerance</h2>
+    </div>
+    <div class="rule-body">
+      <p>SQUIDS has a <strong>zero-tolerance policy</strong> for harassment and abuse. The following are strictly prohibited:</p>
+      <ul>
+        <li>Targeted harassment or bullying of any user.</li>
+        <li>Threats of physical violence or harm.</li>
+        <li>Doxxing — sharing someone's private personal information without consent.</li>
+        <li>Stalking or persistently contacting someone who has blocked you.</li>
+        <li>Coordinated attacks on a specific person or group.</li>
+      </ul>
+      <p>Reports of harassment are investigated immediately. Accounts found in violation will be suspended pending review and may be permanently banned.</p>
+      <div class="cross-refs-row">
+        <span class="cross-refs-label">Report:</span>
+        <a href="mailto:support@squids.co.za" class="cross-ref">support@squids.co.za</a>
+        <a href="/help#report" class="cross-ref">How to Report</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="hate" class="rule-section">
+    <div class="rule-head rule-head-red">
+      <div class="rule-icon rule-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <h2>Hate Speech &amp; Discrimination</h2>
+    </div>
+    <div class="rule-body">
+      <p>Content that promotes hatred, discrimination, or dehumanisation based on any of the following is prohibited:</p>
+      <ul>
+        <li>Race, ethnicity, or national origin</li>
+        <li>Religion or religious beliefs</li>
+        <li>Gender, gender identity, or sexual orientation</li>
+        <li>Disability or health status</li>
+        <li>Age or immigration status</li>
+      </ul>
+      <p>This applies to both explicit hate speech and coded language designed to dehumanise groups. Violations are subject to immediate content removal and account action under the Promotion of Equality and Prevention of Unfair Discrimination Act (PEPUDA).</p>
+    </div>
+  </div>
+
+  <div id="misinformation" class="rule-section">
+    <div class="rule-head rule-head-default">
+      <div class="rule-icon rule-icon-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <h2>Misinformation &amp; Fake Content</h2>
+    </div>
+    <div class="rule-body">
+      <p>SQUIDS takes the spread of false information seriously. Do not post:</p>
+      <ul>
+        <li>Deliberately false health or safety information.</li>
+        <li>Fabricated quotes attributed to real people.</li>
+        <li>Manipulated media designed to deceive.</li>
+        <li>False claims about elections, voting, or government processes.</li>
+      </ul>
+      <p>Satirical content is permitted but must be clearly labelled as satire.</p>
+    </div>
+  </div>
+
+  <div id="ai" class="rule-section">
+    <div class="rule-head rule-head-default">
+      <div class="rule-icon rule-icon-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+      <h2>AI-Generated Content</h2>
+    </div>
+    <div class="rule-body">
+      <p>You are responsible for any AI-generated content you post on SQUIDS. You may not use AI to:</p>
+      <ul>
+        <li>Generate content that violates any other section of these guidelines.</li>
+        <li>Impersonate a real person or organisation.</li>
+        <li>Mass-produce spam or low-quality posts.</li>
+        <li>Create synthetic media designed to deceive.</li>
+      </ul>
+      <p>AI-generated content should be clearly disclosed where it could mislead other users about its origins.</p>
+      <div class="cross-refs-row">
+        <span class="cross-refs-label">See:</span>
+        <a href="/terms#s7" class="cross-ref">Terms §7: AI Services</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="minors" class="rule-section">
+    <div class="rule-head rule-head-red">
+      <div class="rule-icon rule-icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h2>Protection of Minors</h2>
+    </div>
+    <div class="rule-body">
+      <p>The protection of children is our highest priority. The following is absolutely prohibited and will be reported to law enforcement:</p>
+      <ul>
+        <li>Child sexual abuse material (CSAM) of any kind.</li>
+        <li>Grooming behaviour targeting minors.</li>
+        <li>Content that sexualises minors in any way.</li>
+        <li>Content encouraging minors to engage in dangerous behaviour.</li>
+      </ul>
+      <p>All reports of child exploitation will be escalated to the South African Police Service and the Film and Publication Board (FPB) without delay.</p>
+    </div>
+  </div>
+
+  <div id="enforcement" class="rule-section">
+    <div class="rule-head rule-head-green">
+      <div class="rule-icon rule-icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h2>Enforcement &amp; Consequences</h2>
+    </div>
+    <div class="rule-body">
+      <p>SQUIDS moderators apply these guidelines consistently and fairly. Depending on the severity of a violation, consequences include:</p>
+      <div class="enforcement-grid">
+        <div class="enforcement-item">
+          <div class="enforcement-icon">⚠️</div>
+          <div class="enforcement-label">Warning</div>
+          <div class="enforcement-desc">For minor first-time violations</div>
+        </div>
+        <div class="enforcement-item">
+          <div class="enforcement-icon">🗑️</div>
+          <div class="enforcement-label">Content Removal</div>
+          <div class="enforcement-desc">Violating content deleted</div>
+        </div>
+        <div class="enforcement-item">
+          <div class="enforcement-icon">🔇</div>
+          <div class="enforcement-label">Temporary Mute</div>
+          <div class="enforcement-desc">Posting restricted temporarily</div>
+        </div>
+        <div class="enforcement-item">
+          <div class="enforcement-icon">⏸️</div>
+          <div class="enforcement-label">Suspension</div>
+          <div class="enforcement-desc">Account suspended pending review</div>
+        </div>
+        <div class="enforcement-item">
+          <div class="enforcement-icon">🚫</div>
+          <div class="enforcement-label">Permanent Ban</div>
+          <div class="enforcement-desc">For serious or repeat violations</div>
+        </div>
+        <div class="enforcement-item">
+          <div class="enforcement-icon">🚔</div>
+          <div class="enforcement-label">Law Enforcement</div>
+          <div class="enforcement-desc">Reported to SAPS for criminal acts</div>
+        </div>
+      </div>
+      <p style="margin-top:.75rem;">Moderation decisions may be appealed by contacting <a href="mailto:support@squids.co.za">support@squids.co.za</a> within 14 days.</p>
+      <div class="cross-refs-row">
+        <a href="/terms#s10" class="cross-ref">Terms §10: Moderation Rights</a>
+        <a href="/help#appeal" class="cross-ref">How to Appeal</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="reporting" class="rule-section">
+    <div class="rule-head rule-head-default">
+      <div class="rule-icon rule-icon-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.3A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 18z"/></svg></div>
+      <h2>How to Report a Violation</h2>
+    </div>
+    <div class="rule-body">
+      <p>If you see content that violates these guidelines, please report it:</p>
+      <ul>
+        <li><strong>In-app:</strong> Use the report button on any post, comment, or profile.</li>
+        <li><strong>Email:</strong> <a href="mailto:support@squids.co.za">support@squids.co.za</a> with details and screenshots.</li>
+        <li><strong>Urgent safety issues:</strong> Mark your email subject line "URGENT — Safety Report".</li>
+      </ul>
+      <p>All reports are reviewed by our moderation team. We take every report seriously and will update you on the outcome where possible.</p>
+      <div class="cross-refs-row">
+        <a href="/help" class="cross-ref">Full Help Centre</a>
+        <a href="mailto:support@squids.co.za" class="cross-ref">Email Support</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-brand">
+      <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="9" fill="#ff4500"/><path d="M15 17.5C15 14.462 17.462 12 20.5 12H29C30.105 12 31 12.895 31 14C31 15.105 30.105 16 29 16H20.5C19.672 16 19 16.672 19 17.5C19 18.328 19.672 19 20.5 19H27.5C30.538 19 33 21.462 33 24.5C33 27.538 30.538 30 27.5 30H19C17.895 30 17 30.895 17 32C17 33.105 17.895 34 19 34H28.5C29.328 34 30 34.672 30 35.5C30 36.328 29.328 37 28.5 37H19C16.239 37 14 34.761 14 32C14 29.239 16.239 27 19 27H27.5C28.328 27 29 26.328 29 25.5C29 24.672 28.328 24 27.5 24H20.5C17.462 24 15 21.538 15 18.5V17.5Z" fill="white"/></svg>SQUIDS
+    </a>
+    <div class="footer-links">
+      <a href="/">Policy Hub</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/community">Community</a><a href="/cookies">Cookies</a><a href="/help">Help</a><a href="mailto:legal@squids.co.za">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 SQUIDS. All rights reserved. Governed by the laws of the Republic of South Africa.</div>
+  </div>
+</footer>
+</body>
+</html>
